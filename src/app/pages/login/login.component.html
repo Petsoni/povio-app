@@ -1,0 +1,15 @@
+<div class="login-component-wrapper">
+  <div class="login-card">
+    <form action="" [formGroup]="loginForm">
+      <mat-form-field>
+        <mat-label>Username</mat-label>
+        <input formControlName="username" matInput type="text">
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input formControlName="password" matInput type="password">
+      </mat-form-field>
+    </form>
+    <button mat-flat-button type="submit" (click)="checkLogin()">Log in</button>
+  </div>
+</div>

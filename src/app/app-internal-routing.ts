@@ -4,7 +4,7 @@ import {ProblemsComponent} from "./pages/problems/problems.component";
 
 export const mainRoutingPaths: InternalRoutes[] = [
   {
-    path: '',
+    path: 'overview',
     title: "Overview",
     icon: "home",
     component: OverviewComponent

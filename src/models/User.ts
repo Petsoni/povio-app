@@ -1,11 +1,11 @@
 import FileDocument from "./File";
 
 export interface User {
-  id: number,
+  user_id: number,
   username: string,
   password: string,
-  role: string,
-  files?: FileDocument[]
+  email: string,
+  user_role: string,
 }
 
 export default User;

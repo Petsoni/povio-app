@@ -1,0 +1,29 @@
+@import "src/styles";
+
+.login-component-wrapper {
+  height: 100dvh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .login-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: $secondary-color;
+    padding: 2rem;
+    border-radius: 6px;
+    gap: 1rem;
+    width: 20rem;
+
+    form {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+    }
+  }
+}

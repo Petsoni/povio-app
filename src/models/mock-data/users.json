@@ -1,0 +1,30 @@
+[
+  {
+    "user_id": 1,
+    "username": "admin",
+    "password": "admin",
+    "email": "admin@gmail.com",
+    "user_role": "Project Manager"
+  },
+  {
+    "user_id": 2,
+    "username": "frontend",
+    "password": "front",
+    "email": "cbeane1@nba.com",
+    "user_role": "Frontend Developer"
+  },
+  {
+    "user_id": 3,
+    "username": "aleaver2",
+    "password": "nI6{/Mrvj2B",
+    "email": "balbin2@sun.com",
+    "user_role": "Backend Developer"
+  },
+  {
+    "user_id": 4,
+    "username": "jfellgett3",
+    "password": "nQ7,J!9,Zi$$?",
+    "email": "maristide3@fotki.com",
+    "user_role": "DevOps Engineer"
+  }
+]

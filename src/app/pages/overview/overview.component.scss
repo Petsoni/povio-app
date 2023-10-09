@@ -1,0 +1,28 @@
+.overview-component-wrapper {
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .overview-actions-wrapper, .search-actions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0;
+    height: 40rem;
+    width: 70%;
+    gap: 1rem;
+
+    button {
+      flex: 1;
+    }
+
+    .search-field {
+      width: 25rem;
+      flex: 10;
+    }
+  }
+}

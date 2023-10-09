@@ -4,25 +4,37 @@ import {BrowserModule} from '@angular/platform-browser';
 import {AppComponent} from './app.component';
 import {AppRoutingModule} from './app-routing.module';
 import {OverviewComponent} from './pages/overview/overview.component';
-import {NavigatedRootComponent} from './components/navigated-root/navigated-root.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MaterialModule} from "./material/material.module";
-import { ProblemsComponent } from './pages/problems/problems.component';
+import {ProblemsComponent} from './pages/problems/problems.component';
+import {LoginComponent} from './pages/login/login.component';
+import {MAT_FORM_FIELD_DEFAULT_OPTIONS} from "@angular/material/form-field";
+import {ReactiveFormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
+import { AddDocumentComponent } from './pages/overview/add-document/add-document.component';
+import {MatDialogConfig, MatDialogModule} from "@angular/material/dialog";
 
 @NgModule({
   declarations: [
     AppComponent,
     OverviewComponent,
-    NavigatedRootComponent,
-    ProblemsComponent
+    ProblemsComponent,
+    LoginComponent,
+    AddDocumentComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule
+    MaterialModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    MatDialogModule,
   ],
-  providers: [],
+  providers: [
+    {provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'outline'}},
+  ],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {
+}
