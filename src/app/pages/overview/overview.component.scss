@@ -7,22 +7,61 @@
   justify-content: center;
   align-items: center;
 
-  .overview-actions-wrapper, .search-actions {
+  .overview-actions-wrapper, {
     display: flex;
     justify-content: center;
-    align-items: center;
-    margin: 1rem 0;
-    height: 40rem;
-    width: 70%;
+    align-items: flex-start;
+    flex-direction: column;
+    margin: 5rem 0;
+    width: 60%;
     gap: 1rem;
+
+    .search-actions {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .filter-actions {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      justify-content: center;
+      align-items: center;
+    }
 
     button {
       flex: 1;
+      height: 3.5rem;
     }
 
     .search-field {
       width: 25rem;
       flex: 10;
+    }
+  }
+
+  .feed-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 60%;
+    margin-bottom: 3rem;
+
+    .file-card {
+      cursor: pointer;
+      padding: 2rem 1rem;
+      border-radius: 6px;
+      border: 1px solid #727272;
+      transition: all 0.25s ease-in-out;
+
+      &:hover {
+        scale: 1.05;
+        background: #424242;
+        transition: all 0.25s ease-in-out;
+      }
     }
   }
 }

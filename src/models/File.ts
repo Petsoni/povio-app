@@ -1,8 +1,10 @@
 export type FileDocument = {
-  file_id: number,
-  file_name: string,
-  file_type: string,
-  file_path: string,
+  document_id: number,
+  title: string,
+  description: string,
+  last_modified: string,
+  last_modified_by: number,
+  tag: string
 }
 
 export default FileDocument;

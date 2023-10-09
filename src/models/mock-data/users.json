@@ -3,28 +3,70 @@
     "user_id": 1,
     "username": "admin",
     "password": "admin",
-    "email": "admin@gmail.com",
-    "user_role": "Project Manager"
+    "email": "dgouth0@forbes.com",
+    "user_role": "BACKEND"
   },
   {
     "user_id": 2,
-    "username": "frontend",
-    "password": "front",
-    "email": "cbeane1@nba.com",
-    "user_role": "Frontend Developer"
+    "username": "dkleine1",
+    "password": "lJzm13\"n",
+    "email": "mlindenbaum1@cocolog-nifty.com",
+    "user_role": "FRONTEND"
   },
   {
     "user_id": 3,
-    "username": "aleaver2",
-    "password": "nI6{/Mrvj2B",
-    "email": "balbin2@sun.com",
-    "user_role": "Backend Developer"
+    "username": "jcottisford2",
+    "password": "bI'{z>PN'vg+",
+    "email": "vnaile2@xing.com",
+    "user_role": "BACKEND"
   },
   {
     "user_id": 4,
-    "username": "jfellgett3",
-    "password": "nQ7,J!9,Zi$$?",
-    "email": "maristide3@fotki.com",
-    "user_role": "DevOps Engineer"
+    "username": "rmccathy3",
+    "password": "tU`b`)sXGhlOa7OG",
+    "email": "lkyndred3@tamu.edu",
+    "user_role": "FRONTEND"
+  },
+  {
+    "user_id": 5,
+    "username": "bbramall4",
+    "password": "gZh,p879)/Eb/>=",
+    "email": "ddegiorgi4@statcounter.com",
+    "user_role": "BACKEND"
+  },
+  {
+    "user_id": 6,
+    "username": "ekempton5",
+    "password": "tKUH`(CK(",
+    "email": "hespadas5@hugedomains.com",
+    "user_role": "DESIGN"
+  },
+  {
+    "user_id": 7,
+    "username": "cmelmar6",
+    "password": "tJ$kH7i|mx?b13",
+    "email": "jogavin6@jiathis.com",
+    "user_role": "FRONTEND"
+  },
+  {
+    "user_id": 8,
+    "username": "cseaton7",
+    "password": "cAKwlRXq5`9}?.nv",
+    "email": "agannicleff7@unesco.org",
+    "user_role": "BACKEND"
+  },
+  {
+    "user_id": 9,
+    "username": "mmchirrie8",
+    "password": "bC7kPy4*am?,nH",
+    "email": "rosmint8@etsy.com",
+    "user_role": "SUPPORT"
+  },
+  {
+    "user_id": 10,
+    "username": "lslot9",
+    "password": "qVhw0gqn,cXpDngb",
+    "email": "alaing9@japanpost.jp",
+    "user_role": "FINANCE"
   }
 ]

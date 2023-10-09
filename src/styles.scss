@@ -41,6 +41,10 @@ body {
   background: #212121;
 }
 
+h1, h2, h3, h4, h5, p {
+  color: $tertiary-color;
+}
+
 button {
   display: flex;
   flex-direction: row;
@@ -51,4 +55,20 @@ button {
 
 .mat-mdc-form-field-subscript-wrapper {
   display: none !important;
+}
+
+.mdc-dialog__container {
+  margin: 0 !important;
+}
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+
+::-webkit-scrollbar-track {
+  background: $secondary-color;
+}
+
+::-webkit-scrollbar-thumb {
+  background: $primary-color;
 }

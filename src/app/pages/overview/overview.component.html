@@ -9,14 +9,28 @@
         Add
       </button>
       <mat-form-field class="search-field">
-        <input matInput placeholder="Search">
+        <input matInput placeholder="Search" #documentSearch (input)="onKeyUp(documentSearch.value)">
         <mat-icon color="primary" matSuffix>search</mat-icon>
       </mat-form-field>
     </div>
     <div class="filter-actions">
-
+      <mat-form-field>
+        <mat-select [(value)]="selectedUserRole" (selectionChange)="filterDocumentsByTag()" placeholder="User role">
+          <mat-option [value]="'ALL'"><b><i>Clear</i></b></mat-option>
+          <mat-option *ngFor="let userRole of userRoles" [value]="userRole.value">
+            {{userRole.displayName}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
     </div>
   </div>
   <div class="feed-wrapper">
+    <div class="file-card" *ngFor="let file of uploadedFiles" (click)="openDocumentDialog(file)">
+      <h2>{{file.title}}</h2>
+      <div class="file-description-short">
+        <p>{{file.description}}</p>
+      </div>
+      <mat-chip [ngStyle]="{'background': getColorByTag(file.tag)}">{{file.tag}}</mat-chip>
+    </div>
   </div>
 </div>
