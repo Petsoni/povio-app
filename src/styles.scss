@@ -1,0 +1,42 @@
+$primary-color: #24dd8c;
+$secondary-color: #1b1b1b;
+$tertiary-color: #f5f5f5;
+
+@use "@angular/material" as mat;
+
+@include mat.core();
+$povio-app-primary: mat.define-palette(mat.$teal-palette, 500, 600, 700);
+$povio-app-accent: mat.define-palette(mat.$teal-palette, A200, A100, A400);
+$povio-app-warn: mat.define-palette(mat.$red-palette);
+
+$povio-typography: mat.define-typography-config(
+  $font-family: "Mulish",
+);
+
+$povio-app-theme: mat.define-dark-theme(
+    (
+      color: (
+        primary: $povio-app-primary,
+        accent: $povio-app-accent,
+        warn: $povio-app-warn,
+      ),
+      typography: $povio-typography
+    )
+);
+
+@include mat.all-component-themes($povio-app-theme);
+
+* {
+  font-family: 'Mulish', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100dvh;
+}
+
+body {
+  margin: 0;
+  font-family: 'Mulish', sans-serif;
+}
