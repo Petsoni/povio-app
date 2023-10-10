@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit {
   })
 
   users: User[] = [];
+  loginHistory: any[] = [];
 
   constructor(private httpClient: HttpClient) {
   }
@@ -33,6 +34,12 @@ export class LoginComponent implements OnInit {
     this.users.forEach(user => {
       if (user.username === this.loginForm.value.username && user.password === this.loginForm.value.password) {
         window.open("http://localhost:4200/overview", "_self")
+        this.loginHistory.push({
+          userId: user.userId,
+          loginTime: new Date()
+        });
+        JSON.stringify(this.loginHistory);
+        localStorage.setItem("loggedInUser", JSON.stringify(this.loginHistory));
       }
     });
   }

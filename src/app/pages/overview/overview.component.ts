@@ -69,10 +69,12 @@ export class OverviewComponent implements OnInit {
 
   openDocumentDialog(document?: any) {
     const dialogConfig = new MatDialogConfig();
+    console.log(document);
     if (document) {
       dialogConfig.data = document;
     }
     dialogConfig.minWidth = '50%';
+    dialogConfig.minHeight = '80%';
     this.dialog.open(AddDocumentComponent, dialogConfig);
   }
 
@@ -89,7 +91,7 @@ export class OverviewComponent implements OnInit {
     if (this.selectedUser === null) {
       this.getAllUsers();
     } else {
-      this.users = users.filter(user => user.user_id === this.selectedUser!.user_id);
+      this.users = users.filter(user => user.userId === this.selectedUser!.userId);
     }
   }
 

@@ -10,6 +10,6 @@
         <input formControlName="password" matInput type="password">
       </mat-form-field>
     </form>
-    <button mat-flat-button type="submit" (click)="checkLogin()">Log in</button>
+    <button mat-flat-button type="submit" (click)="checkLogin()" [disabled]="this.loginForm.invalid">Log in</button>
   </div>
 </div>

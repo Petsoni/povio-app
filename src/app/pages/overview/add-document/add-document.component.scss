@@ -9,6 +9,23 @@
   .document-description, .document-title {
     width: 100%;
 
+    .header-wrapper {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+
+      mat-icon {
+        cursor: pointer;
+
+        &:hover {
+          color: #ccc;
+        }
+      }
+    }
+
     mat-form-field {
       width: 100%;
     }
@@ -20,5 +37,53 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+  }
+
+  .comments-wrapper {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .comment {
+      padding: 1rem 1.25rem;
+      border-radius: 0.5rem;
+      border: 1px solid #ccc;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      gap: 1rem;
+
+
+      .comment-text {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+        gap: 1rem;
+
+        mat-form-field {
+          width: 100%;
+        }
+      }
+
+      .comment-date {
+        width: 100%;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+
+        p {
+          margin: 0;
+          font-size: 0.75rem;
+          color: #ccc;
+        }
+
+      }
+
+
+    }
   }
 }

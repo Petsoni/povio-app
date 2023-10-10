@@ -1,9 +1,9 @@
 export interface User {
-  user_id: number,
+  userId: number,
   username: string,
   password: string,
   email: string,
-  user_role: string,
+  userRole: string,
 }
 
 export default User;

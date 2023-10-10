@@ -1,9 +1,12 @@
-import {Component, Inject, OnInit} from '@angular/core';
-import {MAT_DIALOG_DATA, MatDialog, MatDialogRef} from "@angular/material/dialog";
+import {AfterViewInit, Component, Inject, OnInit, ViewChild} from '@angular/core';
+import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import FileDocument from "../../../../models/File";
 import users from '../../../../models/mock-data/users.json';
 import User from "../../../../models/User";
-import file from "../../../../models/File";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {UserRole} from "../../../../models/UserRole";
+import userRoles from '../../../../models/mock-data/roles.json';
+import Comment from "../../../../models/Comment";
 
 @Component({
   selector: 'app-add-document',
@@ -12,14 +15,27 @@ import file from "../../../../models/File";
 })
 export class AddDocumentComponent implements OnInit {
 
-  passedDocument: FileDocument;
+  @ViewChild(HTMLTextAreaElement, {static: false}) commentInput: HTMLTextAreaElement;
+
+  passedDocument: any;
   users: User[] = [];
   lastModifiedBy: User;
-  currentDate: Date = new Date();
   filePresent: boolean = false;
+  userRoles: UserRole[] = [];
+  currentDate: Date = new Date();
 
-  constructor(private dialogRef: MatDialogRef<AddDocumentComponent>,
-              @Inject(MAT_DIALOG_DATA) documentData: FileDocument) {
+  addDocumentForm = new FormGroup({
+    title: new FormControl(null, Validators.required),
+    description: new FormControl(null, Validators.required),
+    tag: new FormControl(null, Validators.required),
+    lastModifiedBy: new FormControl(null, Validators.required),
+    lastModified: new FormControl(new Date())
+  });
+  selectedRole: UserRole;
+  editingUser: User;
+
+  constructor(public dialogRef: MatDialogRef<AddDocumentComponent>,
+              @Inject(MAT_DIALOG_DATA) documentData: any) {
     if (documentData) {
       this.passedDocument = documentData;
       this.filePresent = true;
@@ -27,25 +43,37 @@ export class AddDocumentComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.getUsers();
+    this.getAllUsers();
+    this.getAllRoles();
   }
 
   getUserById() {
     this.users.map(user => {
-      if (this.passedDocument?.last_modified_by === user?.user_id) {
+      if (this.passedDocument?.lastModifiedBy === user?.userId) {
         this.lastModifiedBy = user;
+        this.checkIfUserCanEdit();
       }
     })
   }
 
-  getUsers() {
+  getAllUsers() {
     this.users = users;
     this.getUserById();
   }
 
+  getAllRoles() {
+    this.userRoles = userRoles
+  }
+
+  saveFile() {
+    console.log(this.addDocumentForm.value)
+  }
+
   checkIfUserCanEdit() {
+    let localUser = localStorage.getItem('loggedInUser');
+    this.editingUser =  localUser !== null ? JSON.parse(localUser) : null;
     this.users.map(user => {
-      return user.user_id === this.passedDocument?.last_modified_by;
+      return user.userId === this.passedDocument?.lastModifiedBy;
     })
   }
 }

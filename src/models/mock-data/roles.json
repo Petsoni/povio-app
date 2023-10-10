@@ -1,0 +1,27 @@
+[
+  {
+    "roleId": 1,
+    "displayValue": "Backend",
+    "value": "BACKEND"
+  },
+  {
+    "roleId": 2,
+    "displayValue": "Frontend",
+    "value": "FRONTEND"
+  },
+  {
+    "roleId": 3,
+    "displayValue": "Finance",
+    "value": "FINANCE"
+  },
+  {
+    "roleId": 4,
+    "displayValue": "Support",
+    "value": "SUPPORT"
+  },
+  {
+    "roleId": 5,
+    "displayValue": "Design",
+    "value": "DESIGN"
+  }
+]
