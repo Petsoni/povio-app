@@ -1,15 +1,21 @@
 <div class="login-component-wrapper">
+  <div class="image-wrapper">
+    <img src="assets/povio-logo.png" alt="logo">
+  </div>
   <div class="login-card">
     <form action="" [formGroup]="loginForm">
-      <mat-form-field>
+      <mat-form-field color="primary" appearance="fill">
         <mat-label>Username</mat-label>
         <input formControlName="username" matInput type="text">
       </mat-form-field>
-      <mat-form-field>
+      <mat-form-field color="accent" appearance="fill">
         <mat-label>Password</mat-label>
         <input formControlName="password" matInput type="password">
       </mat-form-field>
+      <a href="http://localhost:4200">Forgot your password?</a>
     </form>
-    <button mat-flat-button type="submit" (click)="checkLogin()" [disabled]="this.loginForm.invalid">Log in</button>
+    <button color="primary" mat-flat-button type="submit" (click)="checkLogin()" [disabled]="this.loginForm.invalid">Log
+      in
+    </button>
   </div>
 </div>

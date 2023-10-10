@@ -13,7 +13,7 @@ $povio-typography: mat.define-typography-config(
   $font-family: "Mulish",
 );
 
-$povio-app-theme: mat.define-dark-theme(
+$povio-app-theme: mat.define-light-theme(
     (
       color: (
         primary: $povio-app-primary,
@@ -38,11 +38,15 @@ html, body {
 body {
   margin: 0;
   font-family: 'Mulish', sans-serif;
-  background: #212121;
+  background: #EDEDED;
 }
 
 h1, h2, h3, h4, h5, p {
-  color: $tertiary-color;
+  color: $secondary-color;
+}
+
+.povio-logo {
+  width: 20%;
 }
 
 button {
@@ -72,3 +76,20 @@ button {
 ::-webkit-scrollbar-thumb {
   background: $primary-color;
 }
+
+
+.mat-tab-label {
+  background: transparent !important;
+  opacity: 1 !important;
+  transition: 150ms all ease !important;
+  letter-spacing: -0.5px;
+}
+
+.mat-tab-label-active,
+.mat-tab-label-active:not(.mat-tab-disabled) {
+  transition: 150ms all ease !important;
+  background: #24dd8c !important;
+  color: white !important;
+  border-radius: 25px !important;
+}
+

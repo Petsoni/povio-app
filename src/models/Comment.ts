@@ -1,8 +1,11 @@
 export type Comment = {
   commentId: number,
-  commentUser: string,
-  comment: string,
-  commentDate: string,
+  text: string,
+  author: string,
+  userPic: string
+  createdDate: string,
+  likes: number,
+  dislikes: number,
 }
 
 export default Comment;

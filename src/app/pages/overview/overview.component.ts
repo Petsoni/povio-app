@@ -3,10 +3,14 @@ import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
 import {AddDocumentComponent} from "./add-document/add-document.component";
 import uploadedFiles from '../../../models/mock-data/files.json'
 import users from '../../../models/mock-data/users.json'
-import FileDocument from "../../../models/File";
+import FileDocument from "../../../models/Post";
 import {debounceTime, Subject} from "rxjs";
 import {filterDocuments} from "../../../utils/filters";
 import User from "../../../models/User";
+import {getColorByTag} from "../../../utils/global-getters";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {UserRole} from "../../../models/UserRole";
+import userRoles from '../../../models/mock-data/roles.json';
 
 @Component({
   selector: 'app-overview',
@@ -15,36 +19,37 @@ import User from "../../../models/User";
 })
 export class OverviewComponent implements OnInit {
 
+  protected readonly getColorByTag = getColorByTag;
   uploadedFiles: FileDocument[] = [];
-  selectedUserRole: any;
+  selectedTag: any
   typingSubject = new Subject<any>();
   documentSearchValue: string = '';
-
-  selectedUser: User | null;
-  users: User[] = [];
-
-  userRoles = [
+  typeOfUpload = [
     {
-      value: 'BACKEND',
-      displayName: 'Backend',
+      value: 'WRITE',
+      icon: 'edit',
+      displayName: 'Write',
     },
     {
-      value: 'FRONTEND',
-      displayName: 'Frontend',
-    },
-    {
-      value: 'DESIGN',
-      displayName: 'Design',
-    },
-    {
-      value: 'FINANCE',
-      displayName: 'Finance',
-    },
-    {
-      value: 'SUPPORT',
-      displayName: 'Support',
+      value: 'ASK',
+      icon: 'question_answer',
+      displayName: 'Ask',
     }
   ]
+
+  currentDate = new Date();
+  users: User[] = [];
+  selectedUserRole: UserRole
+
+  userRoles: UserRole[] = []
+
+  addDocumentForm = new FormGroup({
+    title: new FormControl(null, Validators.required),
+    description: new FormControl(null, Validators.required),
+    tag: new FormControl(null, Validators.required),
+    lastModifiedBy: new FormControl(null, Validators.required),
+    lastModified: new FormControl(new Date())
+  });
 
   constructor(private dialog: MatDialog) {
     this.typingSubject.pipe(
@@ -57,6 +62,7 @@ export class OverviewComponent implements OnInit {
   ngOnInit() {
     this.getUploadedFiles();
     this.getAllUsers();
+    this.getAllRoles();
   }
 
   getUploadedFiles() {
@@ -67,31 +73,27 @@ export class OverviewComponent implements OnInit {
     this.users = users;
   }
 
+  getAllRoles() {
+    this.userRoles = userRoles
+  }
+
   openDocumentDialog(document?: any) {
     const dialogConfig = new MatDialogConfig();
     console.log(document);
     if (document) {
       dialogConfig.data = document;
     }
-    dialogConfig.minWidth = '50%';
-    dialogConfig.minHeight = '80%';
+    dialogConfig.minWidth = '95dvw';
+    dialogConfig.maxHeight = '95dvh';
     this.dialog.open(AddDocumentComponent, dialogConfig);
   }
 
   filterDocumentsByTag() {
-    if (this.selectedUserRole === 'ALL') {
+    if (this.selectedTag === 'ALL') {
       this.getUploadedFiles();
       this.selectedUserRole = null;
     } else {
-      this.uploadedFiles = uploadedFiles.filter(file => file.tag === this.selectedUserRole);
-    }
-  }
-
-  filterDocumentsByUser() {
-    if (this.selectedUser === null) {
-      this.getAllUsers();
-    } else {
-      this.users = users.filter(user => user.userId === this.selectedUser!.userId);
+      this.uploadedFiles = uploadedFiles.filter(file => file.category === this.selectedTag);
     }
   }
 
@@ -106,20 +108,4 @@ export class OverviewComponent implements OnInit {
     });
   }
 
-  getColorByTag(tag: string) {
-    switch (tag) {
-      case 'BACKEND':
-        return '#a81627';
-      case 'SUPPORT':
-        return '#f5a623';
-      case 'FRONTEND':
-        return '#4a90e2';
-      case 'DESIGN':
-        return '#7ed321';
-      case 'FINANCE':
-        return '#9013fe';
-      default:
-        return '#000000';
-    }
-  }
 }

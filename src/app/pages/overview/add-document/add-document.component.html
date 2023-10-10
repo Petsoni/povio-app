@@ -8,7 +8,12 @@
       <div class="document-description">
         <p>{{passedDocument.description}}</p>
       </div>
-      <mat-chip>{{lastModifiedBy.username}} | {{passedDocument.lastModified | date: 'dd.MM.yyyy.'}}</mat-chip>
+      <div class="file-info">
+        <mat-chip>
+          {{passedDocument?.author}} | {{passedDocument.lastModified}}
+        </mat-chip>
+        <mat-chip>{{passedDocument.numberOfUpVotes}}</mat-chip>
+      </div>
     </div>
     <div class="comments-wrapper">
       <div class="comment">
@@ -16,7 +21,7 @@
           <mat-icon>account_circle</mat-icon>
           <mat-form-field appearance="fill" floatLabel="always">
             <textarea matInput type="text" #commentInput [value]="null"
-                      [placeholder]="passedDocument.comments.length === 0 ? 'Be the first to provide an answer' : 'Provide an answer'">
+                      [placeholder]="passedDocument.comments ? 'Provide an answer' : 'Be the first to provide an answer'">
             </textarea>
           </mat-form-field>
         </div>
@@ -26,48 +31,13 @@
       </div>
       <div class="comment" *ngFor="let comment of passedDocument.comments">
         <div class="comment-text">
-          <mat-icon [matTooltip]="comment.commentUser">account_circle</mat-icon>
-          <p>{{comment.comment}}</p>
+          <img src="{{comment.userPic}}" alt="User picture" [matTooltip]="comment.author">
+          <p>{{comment.text}}</p>
         </div>
         <div class="comment-date">
-          <p>{{comment.commentDate | date: 'dd.MM.yyyy.'}}</p>
+          <p>{{comment.createdDate}}</p>
         </div>
       </div>
     </div>
   </div>
-</mat-dialog-content>
-<mat-dialog-content *ngIf="!filePresent">
-  <form action="" [formGroup]="addDocumentForm">
-    <div class="main-document-container">
-      <div class="document-title">
-        <mat-form-field>
-          <mat-label>Title</mat-label>
-          <input matInput formControlName="title">
-        </mat-form-field>
-      </div>
-      <div class="document-description">
-        <mat-form-field>
-          <mat-label>Description</mat-label>
-          <textarea matInput formControlName="description"></textarea>
-        </mat-form-field>
-      </div>
-      <div class="user-role">
-        <mat-form-field>
-          <mat-label>Tag</mat-label>
-          <mat-select [(value)]="selectedRole" formControlName="tag">
-            <mat-option *ngFor="let role of userRoles" [value]="role.value">
-              {{role?.displayValue}}
-            </mat-option>
-          </mat-select>
-        </mat-form-field>
-      </div>
-      <div class="dialog-actions">
-        <mat-chip>{{lastModifiedBy?.username}} | {{currentDate | date: 'dd.MM.yyyy'}}</mat-chip>
-        <button mat-flat-button color="primary" (click)="saveFile()">
-          <mat-icon>save</mat-icon>
-          Save
-        </button>
-      </div>
-    </div>
-  </form>
 </mat-dialog-content>

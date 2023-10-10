@@ -1,4 +1,4 @@
-import FileDocument from "../models/File";
+import FileDocument from "../models/Post";
 
 export interface FilterOptions {
   ignoreCase?: boolean;
@@ -62,7 +62,6 @@ export const genericFilter = (searchDataArray: string[], searchString: string, o
 export const filterDocuments = (document: FileDocument, searchString: string) => {
   const documentKeys = [
     document?.title,
-    document?.tag
   ]
     .filter(f => f); // strip null/undefined values
   return genericFilter(documentKeys, searchString);

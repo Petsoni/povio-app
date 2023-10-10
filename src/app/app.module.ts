@@ -13,6 +13,7 @@ import {ReactiveFormsModule} from "@angular/forms";
 import {HttpClientModule} from "@angular/common/http";
 import { AddDocumentComponent } from './pages/overview/add-document/add-document.component';
 import {MatDialogConfig, MatDialogModule} from "@angular/material/dialog";
+import {MatExpansionModule} from "@angular/material/expansion";
 
 @NgModule({
   declarations: [
@@ -22,15 +23,14 @@ import {MatDialogConfig, MatDialogModule} from "@angular/material/dialog";
     LoginComponent,
     AddDocumentComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    BrowserAnimationsModule,
-    MaterialModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    MatDialogModule,
-  ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        BrowserAnimationsModule,
+        MaterialModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+    ],
   providers: [
     {provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, useValue: {appearance: 'outline'}},
   ],

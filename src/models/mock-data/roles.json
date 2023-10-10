@@ -2,26 +2,26 @@
   {
     "roleId": 1,
     "displayValue": "Backend",
-    "value": "BACKEND"
+    "value": "Backend"
   },
   {
     "roleId": 2,
     "displayValue": "Frontend",
-    "value": "FRONTEND"
+    "value": "Frontend"
   },
   {
     "roleId": 3,
     "displayValue": "Finance",
-    "value": "FINANCE"
+    "value": "Finance"
   },
   {
     "roleId": 4,
     "displayValue": "Support",
-    "value": "SUPPORT"
+    "value": "Support"
   },
   {
     "roleId": 5,
     "displayValue": "Design",
-    "value": "DESIGN"
+    "value": "Design"
   }
 ]

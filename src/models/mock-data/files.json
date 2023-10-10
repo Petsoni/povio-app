@@ -1,144 +1,237 @@
 [
   {
-    "documentId": 1,
-    "title": "Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante.",
-    "description": "Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis. Sed ante. Vivamus tortor. Duis mattis egestas metus. Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat. In congue. Etiam justo. Etiam pretium iaculis justo. In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus. Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi. Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.",
-    "lastModified": "11/29/2022",
-    "lastModifiedBy": 1,
-    "tag": "BACKEND",
+    "postId": 1,
+    "title": "Graph Traversals",
+    "description": "Develop a mobile app that helps users track their daily water intake",
+    "author": "rhallitt0",
+    "lastModifiedBy": "hmoreby0",
+    "lastModified": "07.05.2023",
+    "createdDate": "28.08.2023",
+    "category": "Design",
+    "subCategory": "Adobe Illustrator",
+    "numberOfComments": 5,
+    "numberOfUpVotes": 10,
     "comments": [
       {
+        "commentId": 1,
+        "text": "Well done!",
+        "author": "james456",
+        "userPic": "https://fastly.picsum.photos/id/239/200/300.jpg?hmac=jBV5mUiY1RXDAmu4rQXOdWeutyztlxqFSOVpnJ-QUb8",
+        "createdDate": "28.08.2023",
+        "likes": 353,
+        "dislikes": 0
+      },
+      {
         "commentId": 2,
-        "commentUser": "Petar",
-        "comment": "Nulla mollis molestie lorem. Quisque ut erat.",
-        "commentDate": "8/1/2022"
+        "text": "Nice job!",
+        "author": "alex789",
+        "userPic": "https://fastly.picsum.photos/id/239/200/300.jpg?hmac=jBV5mUiY1RXDAmu4rQXOdWeutyztlxqFSOVpnJ-QUb8",
+        "createdDate": "09.09.2023",
+        "likes": 574,
+        "dislikes": 44
       },
       {
         "commentId": 3,
-        "commentUser": "Tigran",
-        "comment": "sollicitudin vitae, consectetuer eget",
-        "commentDate": "18/10/2023"
+        "text": "Amazing work!",
+        "author": "alex789",
+        "userPic": "https://fastly.picsum.photos/id/260/200/300.jpg?hmac=_VpBxDn0zencTyMnssCV14LkW80zG7vw2rw7WCQ2uVo",
+        "createdDate": "09.09.2023",
+        "likes": 169,
+        "dislikes": 96
+      },
+      {
+        "commentId": 4,
+        "text": "Amazing work!",
+        "author": "james456",
+        "userPic": "https://fastly.picsum.photos/id/702/200/300.jpg?hmac=mkz0etLNxZEtcZKYuBuDYD9KewX-7Tv_qsT6aFO0bCU",
+        "createdDate": "13.02.2023",
+        "likes": 348,
+        "dislikes": 48
+      },
+      {
+        "commentId": 5,
+        "text": "Great job!",
+        "author": "emma456",
+        "userPic": "https://fastly.picsum.photos/id/999/200/300.jpg?hmac=XqjgMZW5yK4MjHpQJFs_TiRodRNf9UVKjJiGnDJV8GI",
+        "createdDate": "13.02.2023",
+        "likes": 436,
+        "dislikes": 39
       }
     ]
   },
   {
-    "documentId": 2,
-    "title": "Suspendisse potenti.",
-    "description": "Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat. Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat. Nulla nisl. Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum. In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante.",
-    "lastModified": "10/28/2022",
-    "lastModifiedBy": 2,
-    "tag": "FRONTEND",
+    "postId": 2,
+    "title": "Graph Traversals",
+    "description": "Develop a mobile app that helps users track their daily water intake",
+    "author": "lpryke1",
+    "lastModifiedBy": "ttailby1",
+    "lastModified": "04.07.2022",
+    "createdDate": "11.02.2023",
+    "category": "Backend",
+    "subCategory": "Spring Boot",
+    "numberOfComments": 3,
+    "numberOfUpVotes": 55,
     "comments": [
       {
-        "commentId": 2,
-        "commentUser": "Petar",
-        "comment": "Nulla mollis molestie lorem. Quisque ut erat.",
-        "commentDate": "8/1/2022"
+        "commentId": 11,
+        "text": "Well done!",
+        "author": "james456",
+        "userPic": "https://fastly.picsum.photos/id/239/200/300.jpg?hmac=jBV5mUiY1RXDAmu4rQXOdWeutyztlxqFSOVpnJ-QUb8",
+        "createdDate": "mgirardot0",
+        "likes": 353,
+        "dislikes": 0
       },
       {
-        "commentId": 3,
-        "commentUser": "Tigran",
-        "comment": "sollicitudin vitae, consectetuer eget",
-        "commentDate": "18/10/2023"
+        "commentId": 12,
+        "text": "Nice job!",
+        "author": "alex789",
+        "userPic": "https://fastly.picsum.photos/id/239/200/300.jpg?hmac=jBV5mUiY1RXDAmu4rQXOdWeutyztlxqFSOVpnJ-QUb8",
+        "createdDate": "05.05.2023",
+        "likes": 574,
+        "dislikes": 44
+      },
+      {
+        "commentId": 13,
+        "text": "Amazing work!",
+        "author": "alex789",
+        "userPic": "https://fastly.picsum.photos/id/260/200/300.jpg?hmac=_VpBxDn0zencTyMnssCV14LkW80zG7vw2rw7WCQ2uVo",
+        "createdDate": "18.07.2023",
+        "likes": 169,
+        "dislikes": 96
       }
     ]
   },
   {
-    "documentId": 3,
-    "title": "Vestibulum quam sapien, varius ut, blandit non, interdum in, ante.",
-    "description": "Nulla justo. Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis. Sed ante. Vivamus tortor. Duis mattis egestas metus. Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat. In congue. Etiam justo.",
-    "lastModified": "7/23/2023",
-    "lastModifiedBy": 3,
-    "tag": "FRONTEND",
-    "comments": []
+    "postId": 3,
+    "title": "Sorting Algorithms",
+    "description": "Develop a software solution for inventory management in retail stores",
+    "author": "mlantoph2",
+    "lastModifiedBy": "jdeport2",
+    "lastModified": "24.08.2022",
+    "createdDate": "13.11.2022",
+    "category": "Frontend",
+    "subCategory": "Angular",
+    "numberOfComments": 3,
+    "numberOfUpVotes": 55,
+    "comments": [
+      {
+        "commentId": 21,
+        "text": "Well done!",
+        "author": "james456",
+        "userPic": "https://fastly.picsum.photos/id/239/200/300.jpg?hmac=jBV5mUiY1RXDAmu4rQXOdWeutyztlxqFSOVpnJ-QUb8",
+        "createdDate": "13.10.2023.",
+        "likes": 353,
+        "dislikes": 0
+      },
+      {
+        "commentId": 22,
+        "text": "Nice job!",
+        "author": "alex789",
+        "userPic": "https://fastly.picsum.photos/id/239/200/300.jpg?hmac=jBV5mUiY1RXDAmu4rQXOdWeutyztlxqFSOVpnJ-QUb8",
+        "createdDate": "04.11.2022.",
+        "likes": 574,
+        "dislikes": 44
+      },
+      {
+        "commentId": 23,
+        "text": "Amazing work!",
+        "author": "alex789",
+        "userPic": "https://fastly.picsum.photos/id/260/200/300.jpg?hmac=_VpBxDn0zencTyMnssCV14LkW80zG7vw2rw7WCQ2uVo",
+        "createdDate": "04.11.2022.",
+        "likes": 169,
+        "dislikes": 96
+      }
+    ]
   },
   {
-    "documentId": 4,
-    "title": "Donec posuere metus vitae ipsum.",
-    "description": "Maecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti. Nullam porttitor lacus at turpis. Donec posuere metus vitae ipsum. Aliquam non mauris. Morbi non lectus. Aliquam sit amet diam in magna bibendum imperdiet. Nullam orci pede, venenatis non, sodales sed, tincidunt eu, felis. Fusce posuere felis sed lacus. Morbi sem mauris, laoreet ut, rhoncus aliquet, pulvinar sed, nisl.",
-    "lastModified": "6/10/2023",
-    "lastModifiedBy": 4,
-    "tag": "BACKEND",
-    "comments": []
+    "postId": 4,
+    "title": "String Manipulation",
+    "description": "Develop a mobile app that helps users track their daily water intake",
+    "author": "hselbie3",
+    "lastModifiedBy": "dedwicke3",
+    "lastModified": "10.07.2022",
+    "createdDate": "15.02.2022",
+    "category": "Frontend",
+    "subCategory": "Vue",
+    "numberOfComments": 0,
+    "numberOfUpVotes": 241
   },
   {
-    "documentId": 5,
-    "title": "Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros.",
-    "description": "Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius. Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi. Nam ultrices, libero non mattis pulvinar, nulla pede ullamcorper augue, a suscipit nulla elit ac nulla.",
-    "lastModified": "6/14/2023",
-    "lastModifiedBy": 5,
-    "tag": "FRONTEND",
-    "comments": []
+    "postId": 5,
+    "title": "Graph Traversals",
+    "description": "Develop a mobile app that helps users track their daily water intake",
+    "author": "pramsted4",
+    "lastModifiedBy": "kwalthew4",
+    "lastModified": "02.10.2022",
+    "createdDate": "25.09.2022",
+    "category": "Design",
+    "subCategory": "Adobe Photoshop",
+    "numberOfComments": 0,
+    "numberOfUpVotes": 250
   },
   {
-    "documentId": 6,
-    "title": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam.",
-    "description": "Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum. In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo. Aliquam quis turpis eget elit sodales scelerisque. Mauris sit amet eros. Suspendisse accumsan tortor quis turpis. Sed ante. Vivamus tortor. Duis mattis egestas metus. Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est.",
-    "lastModified": "5/8/2023",
-    "lastModifiedBy": 6,
-    "tag": "FRONTEND",
-    "comments": []
+    "postId": 6,
+    "title": "String Manipulation",
+    "description": "Design a smart home system that automates lighting and temperature control",
+    "author": "dparadis5",
+    "lastModifiedBy": "dlilliman5",
+    "lastModified": "05.05.2022",
+    "createdDate": "19.03.2022",
+    "category": "Design",
+    "subCategory": "Adobe Photoshop",
+    "numberOfComments": 16,
+    "numberOfUpVotes": 55
   },
   {
-    "documentId": 7,
-    "title": "Aenean lectus.",
-    "description": "Duis mattis egestas metus. Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh. Quisque id justo sit amet sapien dignissim vestibulum. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Nulla dapibus dolor vel est. Donec odio justo, sollicitudin ut, suscipit a, feugiat et, eros. Vestibulum ac est lacinia nisi venenatis tristique. Fusce congue, diam id ornare imperdiet, sapien urna pretium nisl, ut volutpat sapien arcu sed augue. Aliquam erat volutpat. In congue. Etiam justo. Etiam pretium iaculis justo. In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus. Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi. Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque. Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus. Phasellus in felis. Donec semper sapien a libero. Nam dui. Proin leo odio, porttitor id, consequat in, consequat ut, nulla.",
-    "lastModified": "11/17/2022",
-    "lastModifiedBy": 7,
-    "tag": "DESIGN",
-    "comments": []
+    "postId": 7,
+    "title": "String Manipulation",
+    "description": "Implement a machine learning algorithm to detect spam emails",
+    "author": "lgirardet6",
+    "lastModifiedBy": "obaudet6",
+    "lastModified": "19.05.2023",
+    "createdDate": "11.05.2023",
+    "category": "Frontend",
+    "subCategory": "ReactJS",
+    "numberOfComments": 25,
+    "numberOfUpVotes": 121
   },
   {
-    "documentId": 8,
-    "title": "Etiam vel augue.",
-    "description": "Mauris lacinia sapien quis libero. Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum.",
-    "lastModified": "12/14/2022",
-    "lastModifiedBy": 8,
-    "tag": "SUPPORT",
-    "comments": []
+    "postId": 8,
+    "title": "Sorting Algorithms",
+    "description": "Design a smart home system that automates lighting and temperature control",
+    "author": "vmarcu7",
+    "lastModifiedBy": "bgreve7",
+    "lastModified": "11.07.2022",
+    "createdDate": "13.04.2022",
+    "category": "Frontend",
+    "subCategory": "Angular",
+    "numberOfComments": 22,
+    "numberOfUpVotes": 70
   },
   {
-    "documentId": 9,
-    "title": "Donec quis orci eget orci vehicula condimentum.",
-    "description": "Vivamus vestibulum sagittis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam vel augue. Vestibulum rutrum rutrum neque. Aenean auctor gravida sem. Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio. Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Proin interdum mauris non ligula pellentesque ultrices. Phasellus id sapien in sapien iaculis congue. Vivamus metus arcu, adipiscing molestie, hendrerit at, vulputate vitae, nisl. Aenean lectus. Pellentesque eget nunc. Donec quis orci eget orci vehicula condimentum. Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est. Phasellus sit amet erat. Nulla tempus. Vivamus in felis eu sapien cursus vestibulum. Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem. Duis aliquam convallis nunc.",
-    "lastModified": "11/27/2022",
-    "lastModifiedBy": 9,
-    "tag": "FRONTEND",
-    "comments": []
+    "postId": 9,
+    "title": "String Manipulation",
+    "description": "Develop a software solution for inventory management in retail stores",
+    "author": "wbartel8",
+    "lastModifiedBy": "kcrosskill8",
+    "lastModified": "25.05.2023",
+    "createdDate": "31.12.2022",
+    "category": "Support",
+    "subCategory": "Technical Writing",
+    "numberOfComments": 22,
+    "numberOfUpVotes": 70
   },
   {
-    "documentId": 10,
-    "title": "Morbi ut odio.",
-    "description": "Proin at turpis a pede posuere nonummy. Integer non velit. Donec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque. Duis bibendum. Morbi non quam nec dui luctus rutrum. Nulla tellus. In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat. Curabitur gravida nisi at nibh.",
-    "lastModified": "3/10/2023",
-    "lastModifiedBy": 10,
-    "tag": "FINANCE",
-    "comments": []
-  },
-  {
-    "documentId": 11,
-    "title": "Curabitur convallis.",
-    "description": "Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat. Nulla nisl. Nunc nisl. Duis bibendum, felis sed interdum venenatis, turpis enim blandit mi, in porttitor pede justo eu massa. Donec dapibus. Duis at velit eu est congue elementum. In hac habitasse platea dictumst. Morbi vestibulum, velit id pretium iaculis, diam erat fermentum justo, nec condimentum neque sapien placerat ante. Nulla justo.",
-    "lastModified": "3/27/2023",
-    "lastModifiedBy": 11,
-    "tag": "FRONTEND"
-  },
-  {
-    "documentId": 12,
-    "title": "Cras pellentesque volutpat dui.",
-    "description": "Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus. Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst. Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat. Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat. Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat. Nulla nisl. Nunc nisl.",
-    "lastModified": "1/22/2023",
-    "lastModifiedBy": 12,
-    "tag": "DESIGN",
-    "comments": []
-  },
-  {
-    "documentId": 13,
-    "title": "Donec quis orci eget orci vehicula condimentum.",
-    "description": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat. Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem. Integer tincidunt ante vel ipsum. Praesent blandit lacinia erat. Vestibulum sed magna at nunc commodo placerat. Praesent blandit. Nam nulla. Integer pede justo, lacinia eget, tincidunt eget, tempus vel, pede. Morbi porttitor lorem id ligula. Suspendisse ornare consequat lectus. In est risus, auctor sed, tristique in, tempus sit amet, sem. Fusce consequat. Nulla nisl.",
-    "lastModified": "9/30/2023",
-    "lastModifiedBy": 13,
-    "tag": "BACKEND",
-    "comments": []
+    "postId": 10,
+    "title": "The Fibonacci Sequence",
+    "description": "Build a chatbot for customer support that uses natural language processing",
+    "author": "mfroome9",
+    "lastModifiedBy": "fflag9",
+    "lastModified": "24.08.2022",
+    "createdDate": "21.09.2023",
+    "category": "Finance",
+    "subCategory": "Excel",
+    "numberOfComments": 22,
+    "numberOfUpVotes": 70
   }
 ]
