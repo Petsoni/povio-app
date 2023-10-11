@@ -1,7 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewEncapsulation} from '@angular/core';
 import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
 import {AddDocumentComponent} from "./add-document/add-document.component";
-import uploadedFiles from '../../../models/mock-data/files.json'
+import uploadedSolutionFiles from '../../../models/mock-data/files-solutions.json'
+import uploadedProblemFiles from '../../../models/mock-data/files-problems.json'
 import users from '../../../models/mock-data/users.json'
 import FileDocument from "../../../models/Post";
 import {debounceTime, Subject} from "rxjs";
@@ -15,12 +16,14 @@ import userRoles from '../../../models/mock-data/roles.json';
 @Component({
   selector: 'app-overview',
   templateUrl: './overview.component.html',
-  styleUrls: ['./overview.component.scss']
+  styleUrls: ['./overview.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class OverviewComponent implements OnInit {
 
   protected readonly getColorByTag = getColorByTag;
-  uploadedFiles: FileDocument[] = [];
+  uploadedSolutionFiles: FileDocument[] = [];
+  uploadedProblemFiles: FileDocument[] = [];
   selectedTag: any
   typingSubject = new Subject<any>();
   documentSearchValue: string = '';
@@ -42,6 +45,7 @@ export class OverviewComponent implements OnInit {
   selectedUserRole: UserRole
 
   userRoles: UserRole[] = []
+  showExpansionPanel: boolean = false;
 
   addDocumentForm = new FormGroup({
     title: new FormControl(null, Validators.required),
@@ -66,7 +70,8 @@ export class OverviewComponent implements OnInit {
   }
 
   getUploadedFiles() {
-    this.uploadedFiles = uploadedFiles
+    this.uploadedSolutionFiles = uploadedSolutionFiles
+    this.uploadedProblemFiles = uploadedProblemFiles
   }
 
   getAllUsers() {
@@ -93,7 +98,9 @@ export class OverviewComponent implements OnInit {
       this.getUploadedFiles();
       this.selectedUserRole = null;
     } else {
-      this.uploadedFiles = uploadedFiles.filter(file => file.category === this.selectedTag);
+      this.uploadedSolutionFiles = uploadedSolutionFiles.filter(file => {
+        return file.subCategory === this.selectedTag
+      });
     }
   }
 
@@ -103,9 +110,16 @@ export class OverviewComponent implements OnInit {
   }
 
   filterDocumentsBySearchValue() {
-    this.uploadedFiles = uploadedFiles.filter(file => {
+    this.uploadedSolutionFiles = uploadedSolutionFiles.filter(file => {
       return filterDocuments(file, this.documentSearchValue)
     });
+    this.uploadedProblemFiles = uploadedProblemFiles.filter(file => {
+      return filterDocuments(file, this.documentSearchValue)
+    });
+  }
+
+  showExpansion() {
+    this.showExpansionPanel = true;
   }
 
 }

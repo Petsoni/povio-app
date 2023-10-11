@@ -1,0 +1,185 @@
+[
+  {
+    "postId": 1,
+    "title": "Graph Traversals",
+    "description": "Develop a mobile app that helps users track their daily water intake",
+    "author": "rhallitt0",
+    "lastModifiedBy": "hmoreby0",
+    "lastModified": "07.05.2023",
+    "createdDate": "28.08.2023",
+    "category": "Design",
+    "subCategory": "Adobe Illustrator",
+    "numberOfComments": 5,
+    "numberOfUpVotes": 10,
+    "comments": [
+      {
+        "commentId": 1,
+        "text": "Well done!",
+        "author": "james456",
+        "userPic": "https://fastly.picsum.photos/id/239/200/300.jpg?hmac=jBV5mUiY1RXDAmu4rQXOdWeutyztlxqFSOVpnJ-QUb8",
+        "createdDate": "28.08.2023",
+        "likes": 353,
+        "dislikes": 0
+      },
+      {
+        "commentId": 2,
+        "text": "Nice job!",
+        "author": "alex789",
+        "userPic": "https://fastly.picsum.photos/id/239/200/300.jpg?hmac=jBV5mUiY1RXDAmu4rQXOdWeutyztlxqFSOVpnJ-QUb8",
+        "createdDate": "09.09.2023",
+        "likes": 574,
+        "dislikes": 44
+      },
+      {
+        "commentId": 3,
+        "text": "Amazing work!",
+        "author": "alex789",
+        "userPic": "https://fastly.picsum.photos/id/260/200/300.jpg?hmac=_VpBxDn0zencTyMnssCV14LkW80zG7vw2rw7WCQ2uVo",
+        "createdDate": "09.09.2023",
+        "likes": 169,
+        "dislikes": 96
+      },
+      {
+        "commentId": 4,
+        "text": "Amazing work!",
+        "author": "james456",
+        "userPic": "https://fastly.picsum.photos/id/702/200/300.jpg?hmac=mkz0etLNxZEtcZKYuBuDYD9KewX-7Tv_qsT6aFO0bCU",
+        "createdDate": "13.02.2023",
+        "likes": 348,
+        "dislikes": 48
+      },
+      {
+        "commentId": 5,
+        "text": "Great job!",
+        "author": "emma456",
+        "userPic": "https://fastly.picsum.photos/id/999/200/300.jpg?hmac=XqjgMZW5yK4MjHpQJFs_TiRodRNf9UVKjJiGnDJV8GI",
+        "createdDate": "13.02.2023",
+        "likes": 436,
+        "dislikes": 39
+      }
+    ]
+  },
+  {
+    "postId": 2,
+    "title": "Graph Traversals",
+    "description": "Develop a mobile app that helps users track their daily water intake",
+    "author": "lpryke1",
+    "lastModifiedBy": "ttailby1",
+    "lastModified": "04.07.2022",
+    "createdDate": "11.02.2023",
+    "category": "Backend",
+    "subCategory": "Spring Boot",
+    "numberOfComments": 3,
+    "numberOfUpVotes": 55,
+    "comments": [
+      {
+        "commentId": 11,
+        "text": "Well done!",
+        "author": "james456",
+        "userPic": "https://fastly.picsum.photos/id/239/200/300.jpg?hmac=jBV5mUiY1RXDAmu4rQXOdWeutyztlxqFSOVpnJ-QUb8",
+        "createdDate": "mgirardot0",
+        "likes": 353,
+        "dislikes": 0
+      },
+      {
+        "commentId": 12,
+        "text": "Nice job!",
+        "author": "alex789",
+        "userPic": "https://fastly.picsum.photos/id/239/200/300.jpg?hmac=jBV5mUiY1RXDAmu4rQXOdWeutyztlxqFSOVpnJ-QUb8",
+        "createdDate": "05.05.2023",
+        "likes": 574,
+        "dislikes": 44
+      },
+      {
+        "commentId": 13,
+        "text": "Amazing work!",
+        "author": "alex789",
+        "userPic": "https://fastly.picsum.photos/id/260/200/300.jpg?hmac=_VpBxDn0zencTyMnssCV14LkW80zG7vw2rw7WCQ2uVo",
+        "createdDate": "18.07.2023",
+        "likes": 169,
+        "dislikes": 96
+      }
+    ]
+  },
+  {
+    "postId": 3,
+    "title": "Sorting Algorithms",
+    "description": "Develop a software solution for inventory management in retail stores",
+    "author": "mlantoph2",
+    "lastModifiedBy": "jdeport2",
+    "lastModified": "24.08.2022",
+    "createdDate": "13.11.2022",
+    "category": "Frontend",
+    "subCategory": "Angular",
+    "numberOfComments": 3,
+    "numberOfUpVotes": 55,
+    "comments": [
+      {
+        "commentId": 21,
+        "text": "Well done!",
+        "author": "james456",
+        "userPic": "https://fastly.picsum.photos/id/239/200/300.jpg?hmac=jBV5mUiY1RXDAmu4rQXOdWeutyztlxqFSOVpnJ-QUb8",
+        "createdDate": "13.10.2023.",
+        "likes": 353,
+        "dislikes": 0
+      },
+      {
+        "commentId": 22,
+        "text": "Nice job!",
+        "author": "alex789",
+        "userPic": "https://fastly.picsum.photos/id/239/200/300.jpg?hmac=jBV5mUiY1RXDAmu4rQXOdWeutyztlxqFSOVpnJ-QUb8",
+        "createdDate": "04.11.2022.",
+        "likes": 574,
+        "dislikes": 44
+      },
+      {
+        "commentId": 23,
+        "text": "Amazing work!",
+        "author": "alex789",
+        "userPic": "https://fastly.picsum.photos/id/260/200/300.jpg?hmac=_VpBxDn0zencTyMnssCV14LkW80zG7vw2rw7WCQ2uVo",
+        "createdDate": "04.11.2022.",
+        "likes": 169,
+        "dislikes": 96
+      }
+    ]
+  },
+  {
+    "postId": 4,
+    "title": "String Manipulation",
+    "description": "Develop a mobile app that helps users track their daily water intake",
+    "author": "hselbie3",
+    "lastModifiedBy": "dedwicke3",
+    "lastModified": "10.07.2022",
+    "createdDate": "15.02.2022",
+    "category": "Frontend",
+    "subCategory": "Vue",
+    "numberOfComments": 0,
+    "numberOfUpVotes": 241
+  },
+  {
+    "postId": 5,
+    "title": "Graph Traversals",
+    "description": "Develop a mobile app that helps users track their daily water intake",
+    "author": "pramsted4",
+    "lastModifiedBy": "kwalthew4",
+    "lastModified": "02.10.2022",
+    "createdDate": "25.09.2022",
+    "category": "Design",
+    "subCategory": "Adobe Photoshop",
+    "numberOfComments": 0,
+    "numberOfUpVotes": 250
+  },
+  {
+    "postId": 6,
+    "title": "String Manipulation",
+    "description": "Design a smart home system that automates lighting and temperature control",
+    "author": "dparadis5",
+    "lastModifiedBy": "dlilliman5",
+    "lastModified": "05.05.2022",
+    "createdDate": "19.03.2022",
+    "category": "Design",
+    "subCategory": "Adobe Photoshop",
+    "numberOfComments": 16,
+    "numberOfUpVotes": 55
+  }
+]

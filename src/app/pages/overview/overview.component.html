@@ -9,7 +9,7 @@
         New
       </button>
       <mat-menu #menu="matMenu">
-        <button mat-menu-item *ngFor="let option of typeOfUpload" (click)="formPanel.open()">
+        <button mat-menu-item *ngFor="let option of typeOfUpload" (click)="formPanel.open(); showExpansion()">
           <mat-icon>{{option.icon}}</mat-icon>
           {{option.displayName}}
         </button>
@@ -19,116 +19,122 @@
         <mat-icon color="primary" matSuffix>search</mat-icon>
       </mat-form-field>
     </div>
-    <mat-expansion-panel #formPanel hideToggle>
-      <mat-expansion-panel-header>
-        <mat-panel-title>
-          Upload form
-        </mat-panel-title>
-      </mat-expansion-panel-header>
-      <form action="" [formGroup]="addDocumentForm">
-        <div class="main-document-container">
-          <div class="document-title">
-            <mat-form-field>
-              <mat-label>Title</mat-label>
-              <input matInput formControlName="title">
-            </mat-form-field>
-          </div>
-          <div class="document-description">
-            <mat-form-field>
-              <mat-label>Description</mat-label>
-              <textarea matInput formControlName="description"></textarea>
-            </mat-form-field>
-          </div>
-          <div class="user-role">
-            <mat-form-field>
-              <mat-label>Tag</mat-label>
-              <mat-select [(value)]="selectedUserRole" formControlName="tag">
-                <mat-option *ngFor="let role of userRoles" [value]="role.value">
-                  {{role?.displayValue}}
-                </mat-option>
-              </mat-select>
-            </mat-form-field>
-          </div>
-          <div class="dialog-actions">
-            <button mat-flat-button color="primary">
-              <mat-icon>save</mat-icon>
-              Post
-            </button>
-          </div>
-        </div>
-      </form>
-    </mat-expansion-panel>
     <div class="filter-actions">
       <mat-form-field>
         <mat-select [(value)]="selectedTag" (selectionChange)="filterDocumentsByTag()" placeholder="User role">
           <mat-option [value]="'ALL'"><b><i>Clear</i></b></mat-option>
-          <mat-option *ngFor="let userRole of userRoles" [value]="userRole.value">
-            {{userRole.displayValue}}
-          </mat-option>
-        </mat-select>
+          <mat-optgroup *ngFor="let role of userRoles" [label]="role.displayValue">
+            <mat-option *ngFor="let subCategory of role.subCategory" [value]="subCategory.value">
+              {{subCategory.displayValue}}
+            </mat-option>
+          </mat-optgroup>        </mat-select>
       </mat-form-field>
     </div>
   </div>
   <div class="feed-wrapper">
-    <mat-tab-group mat-stretch-tabs>
-      <mat-tab label="Solutions" autofocus>
-        <div class="file-card" *ngFor="let file of uploadedFiles" (click)="openDocumentDialog(file)">
-          <div class="file-header">
-            <div class="main-header">
-              <div class="file-title">
-                <h2>{{file.title}}</h2>
-                <mat-chip [ngStyle]="{'background': getColorByTag(file.category)}"><b>{{file.category}}</b></mat-chip>
+    <div class="tab-group">
+      <mat-tab-group mat-stretch-tabs>
+        <mat-tab label="Solutions {{uploadedSolutionFiles.length}}" autofocus>
+          <div class="file-card" *ngFor="let file of uploadedSolutionFiles" (click)="openDocumentDialog(file)">
+            <div class="file-header">
+              <div class="main-header">
+                <div class="file-title">
+                  <h2>{{file.title}}</h2>
+                  <mat-chip [ngStyle]="{'background': getColorByTag(file.category)}"><b>{{file.category}}</b></mat-chip>
+                  <mat-chip [ngStyle]="{'background': getColorByTag(file.category)}"><b>{{file.subCategory}}</b></mat-chip>
+                </div>
+                <div class="file-actions">
+                  <p>
+                    <mat-icon>maps_ugc</mat-icon>
+                    {{file.numberOfComments}}
+                  </p>
+                  <p>
+                    <mat-icon>thumb_up</mat-icon>
+                    {{file.numberOfUpVotes}}
+                  </p>
+                </div>
               </div>
-              <div class="file-actions">
-                <p>
-                  <mat-icon>maps_ugc</mat-icon>
-                  {{file.numberOfComments}}
-                </p>
-                <p>
-                  <mat-icon>thumb_up</mat-icon>
-                  {{file.numberOfUpVotes}}
-                </p>
-              </div>
-            </div>
-            <div class="user-info">
-              <p><b>{{file.author}}</b></p>
-              <p>Last modified on: {{file.lastModified}}</p>
-            </div>
-          </div>
-          <div class="file-description-short">
-            <p>{{file.description}}</p>
-          </div>
-        </div>
-      </mat-tab>
-      <mat-tab label="Problems">
-        <div class="file-card" *ngFor="let file of uploadedFiles" (click)="openDocumentDialog(file)">
-          <div class="file-header">
-            <div class="main-header">
-              <div class="file-title">
-                <h2>{{file.title}}</h2>
-                <mat-chip [ngStyle]="{'background': getColorByTag(file.category)}"><b>{{file.category}}</b></mat-chip>
-              </div>
-              <div class="file-actions">
-                <p>
-                  <mat-icon>maps_ugc</mat-icon>
-                  {{file.numberOfComments}}
-                </p>
-                <p>
-                  <mat-icon>thumb_up</mat-icon>
-                  {{file.numberOfUpVotes}}
-                </p>
+              <div class="user-info">
+                <p><b>{{file.author}}</b></p>
+                <p>Last modified on: {{file.lastModified}}</p>
               </div>
             </div>
-            <div class="user-info">
-              <p><b>{{file.author}}</b></p>
-              <p>Last modified on: {{file.lastModified}}</p>
+            <div class="file-description-short">
+              <p>{{file.description}}</p>
             </div>
           </div>
-          <div class="file-description-short">
-            <p>{{file.description}}</p>
+        </mat-tab>
+        <mat-tab label="Problems {{uploadedProblemFiles.length}}">
+          <div class="file-card" *ngFor="let file of uploadedProblemFiles" (click)="openDocumentDialog(file)">
+            <div class="file-header">
+              <div class="main-header">
+                <div class="file-title">
+                  <h2>{{file.title}}</h2>
+                  <mat-chip [ngStyle]="{'background': getColorByTag(file.category)}"><b>{{file.category}}</b></mat-chip>
+                </div>
+                <div class="file-actions">
+                  <p>
+                    <mat-icon>maps_ugc</mat-icon>
+                    {{file.numberOfComments}}
+                  </p>
+                  <p>
+                    <mat-icon>thumb_up</mat-icon>
+                    {{file.numberOfUpVotes}}
+                  </p>
+                </div>
+              </div>
+              <div class="user-info">
+                <p><b>{{file.author}}</b></p>
+                <p>Last modified on: {{file.lastModified}}</p>
+              </div>
+            </div>
+            <div class="file-description-short">
+              <p>{{file.description}}</p>
+            </div>
           </div>
-        </div>
-      </mat-tab>
-    </mat-tab-group>
+        </mat-tab>
+      </mat-tab-group>
+    </div>
+    <div class="creation-form">
+      <mat-expansion-panel #formPanel hideToggle [disabled]="showExpansionPanel">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            Upload form
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <form action="" [formGroup]="addDocumentForm">
+          <div class="main-document-container">
+            <div class="document-title">
+              <mat-form-field>
+                <mat-label>Title</mat-label>
+                <input matInput formControlName="title">
+              </mat-form-field>
+            </div>
+            <div class="document-description">
+              <mat-form-field>
+                <mat-label>Description</mat-label>
+                <textarea matInput formControlName="description"></textarea>
+              </mat-form-field>
+            </div>
+            <div class="user-role">
+              <mat-form-field>
+                <mat-label>Tag</mat-label>
+                <mat-select [(value)]="selectedUserRole" formControlName="tag">
+                  <mat-option *ngFor="let role of userRoles" [value]="role.value">
+                    {{role?.displayValue}}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="dialog-actions">
+              <button mat-flat-button color="primary">
+                <mat-icon>save</mat-icon>
+                Post
+              </button>
+            </div>
+          </div>
+        </form>
+      </mat-expansion-panel>
+    </div>
   </div>
 </div>

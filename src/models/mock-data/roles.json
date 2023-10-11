@@ -2,26 +2,91 @@
   {
     "roleId": 1,
     "displayValue": "Backend",
-    "value": "Backend"
+    "value": "Backend",
+    "subCategory": [
+      {
+        "subCategoryId": 1,
+        "displayValue": "Spring Boot",
+        "value": "Spring Boot"
+      },
+      {
+        "subCategoryId": 2,
+        "displayValue": "Node",
+        "value": "Node"
+      }
+    ]
   },
   {
     "roleId": 2,
     "displayValue": "Frontend",
-    "value": "Frontend"
+    "value": "Frontend",
+    "subCategory": [
+      {
+        "subCategoryId": 3,
+        "displayValue": "Angular",
+        "value": "Angular"
+      },
+      {
+        "subCategoryId": 4,
+        "displayValue": "ReactJS",
+        "value": "ReactJS"
+      }
+    ]
   },
   {
     "roleId": 3,
     "displayValue": "Finance",
-    "value": "Finance"
+    "value": "Finance",
+    "subCategory": [
+      {
+        "subCategoryId": 5,
+        "displayValue": "Accounting",
+        "value": "Accounting"
+      },
+      {
+        "subCategoryId": 6,
+        "displayValue": "Tax",
+        "value": "Tax"
+      }
+    ]
   },
   {
     "roleId": 4,
     "displayValue": "Support",
-    "value": "Support"
+    "value": "Support",
+    "subCategory": [
+      {
+        "subCategoryId": 7,
+        "displayValue": "Customer Support",
+        "value": "Customer Support"
+      },
+      {
+        "subCategoryId": 8,
+        "displayValue": "Technical Support",
+        "value": "Technical Support"
+      }
+    ]
   },
   {
     "roleId": 5,
     "displayValue": "Design",
-    "value": "Design"
+    "value": "Design",
+    "subCategory": [
+      {
+        "subCategoryId": 9,
+        "displayValue": "UI/UX",
+        "value": "UI/UX"
+      },
+      {
+        "subCategoryId": 10,
+        "displayValue": "Graphic Design",
+        "value": "Graphic Design"
+      },
+      {
+        "subCategoryId": 11,
+        "displayValue": "Adobe Photoshop",
+        "value": "Adobe Photoshop"
+      }
+    ]
   }
 ]
