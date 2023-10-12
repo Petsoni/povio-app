@@ -12,7 +12,8 @@
           <h2 *ngIf="passedDocument">{{passedDocument.title}}</h2>
         </div>
         <div class="document-description">
-          <p>{{passedDocument.description}}</p>
+          <p #documentDescription [innerHTML]="passedDocument.description" [contentEditable]="isEditable"
+             class="post-description" [ngClass]="isEditable ? 'editing' : 'not-editing'"></p>
         </div>
         <div class="file-info">
           <div class="upvote-chip" (click)="upvotePost()" [ngClass]="isLiked ? 'liked' : 'can-like'">
@@ -20,8 +21,13 @@
             {{passedDocument.numberOfUpVotes}}
           </div>
         </div>
+        <div class="">
+          <button mat-flat-button color="primary"
+                  (click)="setContentEditable()">{{isEditable ? 'Done' : 'Edit'}}</button>
+        </div>
       </div>
       <div class="comments-wrapper">
+        <h2>Comments</h2>
         <div class="comment">
           <div class="comment-text">
             <mat-icon>account_circle</mat-icon>
@@ -32,7 +38,9 @@
             </mat-form-field>
           </div>
           <div class="comment-date">
-            <button mat-flat-button color="primary" *ngIf="commentInput.value.length != 0">Comment</button>
+            <button mat-flat-button color="primary" (click)="postComment()" *ngIf="commentInput.value.length != 0">
+              Comment
+            </button>
           </div>
         </div>
         <div class="comment" *ngFor="let comment of passedDocument.comments">
@@ -53,18 +61,39 @@
           <h2>{{passedDocument.author}}</h2>
           <p>{{passedDocument.authorDescription}}</p>
           <p>Senior developer</p>
-          <p class="rating">
-            Rating: {{passedDocument.numberOfUpVotes}}
-            <mat-icon>thumb_up</mat-icon>
-          </p>
+          <div class="upvote-chip" (click)="upvotePost()" [ngClass]="isLiked ? 'liked' : 'can-like'">
+            <p class="rating">
+              Rating:
+              <mat-icon>thumb_up</mat-icon>
+              {{passedDocument.numberOfUpVotes}}
+            </p>
+          </div>
         </div>
       </div>
       <div class="modify-history">
         <h1>Modify history</h1>
         <div class="history-item">
+          <h4>{{passedDocument.lastModified}}</h4>
+          <div class="history-list">
+            <p>
+              <mat-icon>account_circle</mat-icon>
+              {{passedDocument.lastModifiedBy}}</p>
+          </div>
+        </div>
+        <div class="history-item">
           <h4>{{passedDocument.lastModified | date: 'dd.MM.yyyy'}}</h4>
           <div class="history-list">
-            <p>{{passedDocument.lastModifiedBy}}</p>
+            <p>
+              <mat-icon>account_circle</mat-icon>
+              {{passedDocument.lastModifiedBy}}</p>
+          </div>
+        </div>
+        <div class="history-item">
+          <h4>{{passedDocument.lastModified | date: 'dd.MM.yyyy'}}</h4>
+          <div class="history-list">
+            <p>
+              <mat-icon>account_circle</mat-icon>
+              {{passedDocument.lastModifiedBy}}</p>
           </div>
         </div>
       </div>

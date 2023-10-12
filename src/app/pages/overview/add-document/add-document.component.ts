@@ -3,11 +3,12 @@ import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
 import Post from "../../../../models/Post";
 import {
   getColorByTag,
+  getLoggedInUser,
   getProblemPosts,
-  getSolutionPosts,
-  saveProblemPost,
-  saveSolutionPost, updatePost
+  getSolutionPosts, getUserById,
+  updatePost
 } from "../../../../utils/global-services";
+import User from "../../../../models/User";
 
 @Component({
   selector: 'app-add-document',
@@ -16,13 +17,17 @@ import {
 })
 export class AddDocumentComponent implements OnInit {
 
-  @ViewChild("descriptionValue", {static: false}) descriptionValue: HTMLTextAreaElement;
+  protected readonly getColorByTag = getColorByTag;
+
+  @ViewChild("documentDescription", {static: false}) documentDescription: HTMLParagraphElement;
+  @ViewChild("commentInput", {static: false}) commentInput: HTMLTextAreaElement;
 
   passedDocument: any;
   uploadedSolutionFiles: Post[]
   uploadedProblemFiles: Post[]
   filePresent: boolean = false;
   isLiked: boolean = false;
+  isEditable: boolean = false;
 
   constructor(public dialogRef: MatDialogRef<AddDocumentComponent>,
               @Inject(MAT_DIALOG_DATA) documentData: any) {
@@ -37,8 +42,12 @@ export class AddDocumentComponent implements OnInit {
   }
 
   upvotePost() {
-    this.uploadedSolutionFiles = getSolutionPosts();
-    this.uploadedProblemFiles = getProblemPosts();
+    getSolutionPosts().then(data => {
+      this.uploadedSolutionFiles = data;
+    })
+    getProblemPosts().then(data => {
+      this.uploadedProblemFiles = data;
+    })
     let foundFile: Post;
     this.uploadedSolutionFiles.map((file) => {
       if (file.postId === this.passedDocument.postId) {
@@ -57,5 +66,19 @@ export class AddDocumentComponent implements OnInit {
     }
   }
 
-  protected readonly getColorByTag = getColorByTag;
+  postComment() {
+
+  }
+
+  setContentEditable() {
+    this.isEditable = !this.isEditable;
+    if (!this.isEditable) {
+      this.passedDocument.description = document.getElementsByClassName('post-description')[0].innerHTML;
+      // this.passedDocument.lastModified = new Date().toLocaleDateString();
+      let lastModifiedBy = getLoggedInUser();
+      let modifyUser = getUserById(lastModifiedBy.userId) as User;
+      this.passedDocument.lastModifiedBy = modifyUser.username;
+      updatePost(this.passedDocument);
+    }
+  }
 }

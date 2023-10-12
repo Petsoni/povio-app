@@ -1,4 +1,4 @@
-import {Component, OnInit, ViewEncapsulation} from '@angular/core';
+import {Component, OnInit, ViewChild, ViewEncapsulation} from '@angular/core';
 import {MatDialog, MatDialogConfig} from "@angular/material/dialog";
 import {AddDocumentComponent} from "./add-document/add-document.component";
 import uploadedSolutionFiles from '../../../models/mock-data/files-solutions.json'
@@ -14,6 +14,7 @@ import {UserRole} from "../../../models/UserRole";
 import userRoles from '../../../models/mock-data/roles.json';
 import notificationList from '../../../models/mock-data/notifications.json'
 import notification from "../../../models/Notification";
+import {MatExpansionPanel} from "@angular/material/expansion";
 
 @Component({
   selector: 'app-overview',
@@ -22,6 +23,8 @@ import notification from "../../../models/Notification";
   encapsulation: ViewEncapsulation.None
 })
 export class OverviewComponent implements OnInit {
+
+  @ViewChild('formPanel', {static: false}) formPanel: MatExpansionPanel;
 
   protected readonly getColorByTag = getColorByTag;
   uploadedSolutionFiles: Post[] = [];
@@ -48,6 +51,7 @@ export class OverviewComponent implements OnInit {
     typeOfPost: new FormControl(null, Validators.required),
   });
   sortOrder: string = 'Newest';
+  loading: boolean = false;
 
   constructor(private dialog: MatDialog) {
     this.typingSubject.pipe(
@@ -65,8 +69,20 @@ export class OverviewComponent implements OnInit {
   }
 
   getUploadedFiles() {
-    this.uploadedSolutionFiles = getSolutionPosts()
-    this.uploadedProblemFiles = getProblemPosts()
+    this.loading = true;
+    setTimeout(() => {
+      getSolutionPosts().then((posts) => {
+        this.uploadedSolutionFiles = posts;
+      }).finally(() => {
+        this.loading = false
+      })
+
+      getProblemPosts().then((posts) => {
+        this.uploadedProblemFiles = posts;
+      }).finally(() => {
+        this.loading = false
+      });
+    }, 2000)
     this.recommendedPosts = getRecommendedPosts()
   }
 
@@ -176,7 +192,10 @@ export class OverviewComponent implements OnInit {
   }
 
   showExpansion() {
-    this.showExpansionPanel = true;
+    this.showExpansionPanel = !this.showExpansionPanel;
+    if(!this.showExpansionPanel){
+      this.formPanel.close();
+    }
   }
 
   setSortOrder() {

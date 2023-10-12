@@ -76,7 +76,8 @@ import {MatDividerModule} from "@angular/material/divider";
     MatExpansionModule,
     MatTabsModule,
     MatDividerModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatProgressBarModule,
   ],
   exports: [
     MatButtonModule,
@@ -100,7 +101,8 @@ import {MatDividerModule} from "@angular/material/divider";
     MatExpansionModule,
     MatTabsModule,
     MatDividerModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatProgressBarModule,
   ],
   providers: [
     MatDatepickerModule,

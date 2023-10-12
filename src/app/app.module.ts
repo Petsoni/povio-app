@@ -14,6 +14,7 @@ import {HttpClientModule} from "@angular/common/http";
 import { AddDocumentComponent } from './pages/overview/add-document/add-document.component';
 import {MatDialogConfig, MatDialogModule} from "@angular/material/dialog";
 import {MatExpansionModule} from "@angular/material/expansion";
+import { FadeInDirective } from './directives/fade-in.directive';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import {MatExpansionModule} from "@angular/material/expansion";
     ProblemsComponent,
     LoginComponent,
     AddDocumentComponent,
+    FadeInDirective,
   ],
     imports: [
         BrowserModule,

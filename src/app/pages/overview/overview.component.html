@@ -21,6 +21,7 @@
         <img src="assets/povio-logo.png" class="povio-logo" alt="logo">
       </div>
 
+      <!---------------------------------- FILTERING/ACTIONS -------------------------------->
       <div class="overview-actions-wrapper">
         <div class="search-actions">
           <button mat-flat-button color="primary" (click)="formPanel.open(); showExpansion()">
@@ -50,57 +51,64 @@
         </div>
       </div>
 
-      <div class="recommended-posts">
-        <div class="posts-wrapper">
-          <div class="file-card" *ngFor="let recommendedPost of recommendedPosts"
-               (click)="openDocumentDialog(recommendedPost)">
-            <div class="file-header">
-              <div class="main-header">
-                <div class="file-title">
-                  <h2>{{recommendedPost.title}}</h2>
-                  <mat-chip [ngStyle]="{'background': getColorByTag(recommendedPost.category)}">
-                    <b>{{recommendedPost.category}}</b>
-                  </mat-chip>
-                  <mat-chip [ngStyle]="{'background': getColorByTag(recommendedPost.category)}">
-                    <b>{{recommendedPost.subCategory}}</b>
-                  </mat-chip>
-                </div>
-                <div class="file-actions">
-                  <p>
-                    <mat-icon>maps_ugc</mat-icon>
-                    {{recommendedPost.numberOfComments}}
-                  </p>
-                  <p>
-                    <mat-icon>thumb_up</mat-icon>
-                    {{recommendedPost.numberOfUpVotes}}
-                  </p>
-                </div>
-              </div>
-              <div class="user-info">
-                <p><b>{{recommendedPost.author}}</b></p>
-                <p>Last modified on: {{recommendedPost.lastModified | date: 'dd.MM.yyyy'}}</p>
-              </div>
-            </div>
-            <div class="file-description-short">
-              <p>{{recommendedPost.description}}</p>
-            </div>
-          </div>
-        </div>
-      </div>
+      <!---------------------------------- RECOMMENDED -------------------------------->
+<!--      <div class="recommended-posts">-->
+<!--        <div class="posts-wrapper">-->
+<!--          <div class="file-card" *ngFor="let recommendedPost of recommendedPosts"-->
+<!--               (click)="openDocumentDialog(recommendedPost)">-->
+<!--            <div class="file-header">-->
+<!--              <div class="main-header">-->
+<!--                <div class="file-title">-->
+<!--                  <h2>{{recommendedPost.title}}</h2>-->
+<!--                  <mat-chip [ngStyle]="{'background': getColorByTag(recommendedPost.category)}">-->
+<!--                    <b>{{recommendedPost.category}}</b>-->
+<!--                  </mat-chip>-->
+<!--                  <mat-chip [ngStyle]="{'background': getColorByTag(recommendedPost.category)}">-->
+<!--                    <b>{{recommendedPost.subCategory}}</b>-->
+<!--                  </mat-chip>-->
+<!--                </div>-->
+<!--                <div class="file-actions">-->
+<!--                  <p>-->
+<!--                    <mat-icon>maps_ugc</mat-icon>-->
+<!--                    {{recommendedPost.numberOfComments}}-->
+<!--                  </p>-->
+<!--                  <p>-->
+<!--                    <mat-icon>thumb_up</mat-icon>-->
+<!--                    {{recommendedPost.numberOfUpVotes}}-->
+<!--                  </p>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--              <div class="user-info">-->
+<!--                <p><b>{{recommendedPost.author}}</b></p>-->
+<!--                <p>Last modified on: {{recommendedPost.lastModified}}</p>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--            <div class="file-description-short">-->
+<!--              <p>{{recommendedPost.description}}</p>-->
+<!--            </div>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </div>-->
+
+      <!---------------------------------- TABS -------------------------------->
       <div class="feed-wrapper">
 
-        <div class="tab-group" [style]="showExpansionPanel ? 'width: 60%' : 'width: 100%'">
-          <mat-tab-group mat-stretch-tabs>
+        <div class="tab-group" [style]="showExpansionPanel ? 'width: 60%' : 'width: 100%'" fadeInAnim
+             fadeInElementClass="mat-tabs">
+          <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+          <mat-tab-group mat-stretch-tabs class="mat-tabs">
             <mat-tab label="Solutions ({{uploadedSolutionFiles.length}})" autofocus>
-              <div class="file-card" *ngFor="let file of uploadedSolutionFiles" (click)="openDocumentDialog(file)">
+              <div class="file-card card" *ngFor="let file of uploadedSolutionFiles" (click)="openDocumentDialog(file)">
                 <div class="file-header">
                   <div class="main-header">
                     <div class="file-title">
                       <h2>{{file.title}}</h2>
-                      <mat-chip [ngStyle]="{'background': getColorByTag(file.category)}"><b>{{file.category}}</b>
-                      </mat-chip>
-                      <mat-chip [ngStyle]="{'background': getColorByTag(file.category)}"><b>{{file.subCategory}}</b>
-                      </mat-chip>
+                      <div class="chips-wrapper">
+                        <mat-chip [ngStyle]="{'background': getColorByTag(file.category)}"><b>{{file.category}}</b>
+                        </mat-chip>
+                        <mat-chip [ngStyle]="{'background': getColorByTag(file.category)}"><b>{{file.subCategory}}</b>
+                        </mat-chip>
+                      </div>
                     </div>
                     <div class="file-actions">
                       <p>
@@ -147,7 +155,7 @@
                   </div>
                   <div class="user-info">
                     <p><b>{{file.author}}</b></p>
-                    <p>Last modified on: {{file.lastModified | date: 'dd.MM.yyyy'}}</p>
+                    <p>Last modified on: {{file.lastModified}}</p>
                   </div>
                 </div>
                 <div class="file-description-short">
@@ -157,6 +165,8 @@
             </mat-tab>
           </mat-tab-group>
         </div>
+
+        <!---------------------------------- UPLOAD FORM -------------------------------->
         <div class="creation-form" [style]="showExpansionPanel ? 'display: block' : 'display: none'">
           <mat-expansion-panel #formPanel hideToggle>
             <mat-expansion-panel-header>
@@ -198,6 +208,10 @@
                   <button mat-flat-button color="primary" (click)="savePost()" [disabled]="addDocumentForm.invalid">
                     <mat-icon>save</mat-icon>
                     Post
+                  </button>
+                  <button mat-flat-button color="warn" (click)="showExpansion()">
+                    <mat-icon>cancel</mat-icon>
+                    Cancel
                   </button>
                 </div>
               </div>

@@ -17,12 +17,25 @@ export function getColorByTag(tag: string) {
   }
 }
 
-export function getSolutionPosts() {
-  return JSON.parse(localStorage.getItem('uploadedSolutionFiles'));
+export function getLoggedInUser() {
+  return JSON.parse(localStorage.getItem('loggedInUser'));
 }
 
-export function getProblemPosts() {
-  return JSON.parse(localStorage.getItem('uploadedProblemFiles'));
+export function setUsersToLocalStorage(users: any) {
+  localStorage.setItem('users', JSON.stringify(users));
+}
+
+export function getUserById(id: number) {
+  const users = JSON.parse(localStorage.getItem('users'));
+  return users.find((user: any) => user.userId === id);
+}
+
+export async function getSolutionPosts() {
+  return await JSON.parse(localStorage.getItem('uploadedSolutionFiles'));
+}
+
+export async function getProblemPosts() {
+  return await JSON.parse(localStorage.getItem('uploadedProblemFiles'));
 }
 
 export function saveSolutionPost(post: any) {
@@ -56,13 +69,13 @@ export function updatePost(post: any) {
   if (!uploadedSolutionFiles) {
     uploadedSolutionFiles = [];
   }
-  uploadedProblemFiles.map((file: Post) => {
+  uploadedProblemFiles = uploadedProblemFiles.map((file: Post) => {
     if (file.postId === post.postId) {
       file = post;
     }
     return file;
   });
-  uploadedSolutionFiles.map((file: Post) => {
+  uploadedSolutionFiles = uploadedSolutionFiles.map((file: Post) => {
     if (file.postId === post.postId) {
       file = post;
     }

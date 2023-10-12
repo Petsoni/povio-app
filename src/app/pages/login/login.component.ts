@@ -7,6 +7,7 @@ import uploadedSolutionFiles from '../../../models/mock-data/files-solutions.jso
 import uploadedProblemFiles from '../../../models/mock-data/files-problems.json'
 import recommendedPosts from '../../../models/mock-data/files-recommended.json'
 import Post from "../../../models/Post";
+import {setUsersToLocalStorage} from "../../../utils/global-services";
 
 @Component({
   selector: 'app-login',
@@ -31,6 +32,7 @@ export class LoginComponent implements OnInit {
 
   getAllUsers() {
     this.users = mockUsers;
+    setUsersToLocalStorage(this.users);
   }
 
   ngOnInit(): void {
@@ -41,6 +43,7 @@ export class LoginComponent implements OnInit {
     this.uploadedSolutionFiles = uploadedSolutionFiles
     this.uploadedProblemFiles = uploadedProblemFiles
     this.recommendedPosts = recommendedPosts
+    // localStorage.setItem("users", JSON.stringify(this.users));
     localStorage.setItem("loggedInUser", JSON.stringify(this.loginHistory));
     localStorage.setItem('uploadedSolutionFiles', JSON.stringify(this.uploadedSolutionFiles));
     localStorage.setItem('uploadedProblemFiles', JSON.stringify(this.uploadedProblemFiles));

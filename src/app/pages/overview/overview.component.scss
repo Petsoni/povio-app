@@ -146,6 +146,7 @@ mat-drawer-container {
       }
 
       .filter-actions {
+        width: 100%;
         display: flex;
         flex-direction: row;
         gap: 1rem;
@@ -167,7 +168,7 @@ mat-drawer-container {
       }
 
       .search-field {
-        width: 25rem;
+        width: 100%;
         flex: 10;
       }
     }
@@ -242,6 +243,15 @@ mat-drawer-container {
                 align-items: center;
                 gap: 0.75rem;
                 margin: 0;
+
+                .chips-wrapper {
+                  display: flex;
+                  flex-direction: row;
+                  justify-content: flex-start;
+                  align-items: center;
+                  gap: 0.5rem;
+                  margin: 0;
+                }
 
                 p {
                   display: flex;
@@ -394,5 +404,48 @@ mat-drawer-container {
         }
       }
     }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .overview-actions-wrapper {
+
+    .search-actions {
+      button {
+        height: 4rem !important;
+      }
+    }
+  }
+
+  .main-header {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+
+    .file-title {
+      align-items: flex-start !important;
+      flex-direction: column-reverse !important;
+    }
+  }
+
+  .feed-wrapper {
+    flex-direction: column-reverse !important;
+  }
+
+  .creation-form {
+    top: 0 !important;
+    width: 100% !important;
+  }
+
+  .tab-group {
+    width: 100% !important;
+  }
+
+  .search-actions {
+    flex-direction: column !important;
+  }
+
+  .filter-actions {
+    flex-direction: column !important;
   }
 }
