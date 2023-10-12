@@ -5,8 +5,8 @@ $tertiary-color: #f5f5f5;
 @use "@angular/material" as mat;
 
 @include mat.core();
-$povio-app-primary: mat.define-palette(mat.$teal-palette, 500, 600, 700);
-$povio-app-accent: mat.define-palette(mat.$teal-palette, A200, A100, A400);
+$povio-app-primary: mat.define-palette(mat.$purple-palette, 700, 800, 900);
+$povio-app-accent: mat.define-palette(mat.$purple-palette, A200, A100, A400);
 $povio-app-warn: mat.define-palette(mat.$red-palette);
 
 $povio-typography: mat.define-typography-config(
@@ -77,19 +77,4 @@ button {
   background: $primary-color;
 }
 
-
-mat-tab-label {
-  background: transparent !important;
-  opacity: 1 !important;
-  transition: 150ms all ease !important;
-  letter-spacing: -0.5px;
-}
-
-.mat-tab-label-active,
-.mat-tab-label-active:not(.mat-tab-disabled) {
-  transition: 150ms all ease !important;
-  background: #24dd8c !important;
-  color: white !important;
-  border-radius: 25px !important;
-}
 

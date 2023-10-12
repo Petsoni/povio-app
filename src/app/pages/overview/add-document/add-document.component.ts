@@ -1,9 +1,13 @@
 import {Component, Inject, OnInit, ViewChild} from '@angular/core';
 import {MAT_DIALOG_DATA, MatDialogRef} from "@angular/material/dialog";
-import users from '../../../../models/mock-data/users.json';
-import User from "../../../../models/User";
-import {FormControl, FormGroup, Validators} from "@angular/forms";
-import {UserRole} from "../../../../models/UserRole";
+import Post from "../../../../models/Post";
+import {
+  getColorByTag,
+  getProblemPosts,
+  getSolutionPosts,
+  saveProblemPost,
+  saveSolutionPost, updatePost
+} from "../../../../utils/global-services";
 
 @Component({
   selector: 'app-add-document',
@@ -15,20 +19,10 @@ export class AddDocumentComponent implements OnInit {
   @ViewChild("descriptionValue", {static: false}) descriptionValue: HTMLTextAreaElement;
 
   passedDocument: any;
-  users: User[] = [];
-  lastModifiedBy: User;
+  uploadedSolutionFiles: Post[]
+  uploadedProblemFiles: Post[]
   filePresent: boolean = false;
-  userRoles: UserRole[] = [];
-  currentDate: Date = new Date();
-
-  addDocumentForm = new FormGroup({
-    title: new FormControl(null, Validators.required),
-    description: new FormControl(null, Validators.required),
-    tag: new FormControl(null, Validators.required),
-    lastModifiedBy: new FormControl(null, Validators.required),
-    lastModified: new FormControl(new Date())
-  });
-  editingUser: User;
+  isLiked: boolean = false;
 
   constructor(public dialogRef: MatDialogRef<AddDocumentComponent>,
               @Inject(MAT_DIALOG_DATA) documentData: any) {
@@ -42,6 +36,26 @@ export class AddDocumentComponent implements OnInit {
   ngOnInit() {
   }
 
-  saveFile() {
+  upvotePost() {
+    this.uploadedSolutionFiles = getSolutionPosts();
+    this.uploadedProblemFiles = getProblemPosts();
+    let foundFile: Post;
+    this.uploadedSolutionFiles.map((file) => {
+      if (file.postId === this.passedDocument.postId) {
+        foundFile = file;
+      }
+    });
+    this.uploadedProblemFiles.map((file) => {
+      if (file.postId === this.passedDocument.postId) {
+        foundFile = file;
+      }
+    });
+    if (foundFile) {
+      this.isLiked = !this.isLiked;
+      this.passedDocument.numberOfUpVotes++;
+      updatePost(this.passedDocument);
+    }
   }
+
+  protected readonly getColorByTag = getColorByTag;
 }

@@ -1,6 +1,6 @@
 [
   {
-    "postId": 1,
+    "postId": 11,
     "title": "Graph Traversals",
     "description": "Develop a mobile app that helps users track their daily water intake",
     "author": "rhallitt0",
@@ -60,7 +60,7 @@
     ]
   },
   {
-    "postId": 2,
+    "postId": 12,
     "title": "Graph Traversals",
     "description": "Develop a mobile app that helps users track their daily water intake",
     "author": "lpryke1",
@@ -102,7 +102,7 @@
     ]
   },
   {
-    "postId": 3,
+    "postId": 13,
     "title": "Sorting Algorithms",
     "description": "Develop a software solution for inventory management in retail stores",
     "author": "mlantoph2",
@@ -144,7 +144,7 @@
     ]
   },
   {
-    "postId": 4,
+    "postId": 14,
     "title": "String Manipulation",
     "description": "Develop a mobile app that helps users track their daily water intake",
     "author": "hselbie3",
@@ -157,7 +157,7 @@
     "numberOfUpVotes": 241
   },
   {
-    "postId": 5,
+    "postId": 15,
     "title": "Graph Traversals",
     "description": "Develop a mobile app that helps users track their daily water intake",
     "author": "pramsted4",
@@ -170,7 +170,7 @@
     "numberOfUpVotes": 250
   },
   {
-    "postId": 6,
+    "postId": 16,
     "title": "String Manipulation",
     "description": "Design a smart home system that automates lighting and temperature control",
     "author": "dparadis5",
