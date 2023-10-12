@@ -5,6 +5,7 @@ import {HttpClient} from "@angular/common/http";
 import mockUsers from '../../../models/mock-data/users.json';
 import uploadedSolutionFiles from '../../../models/mock-data/files-solutions.json'
 import uploadedProblemFiles from '../../../models/mock-data/files-problems.json'
+import recommendedPosts from '../../../models/mock-data/files-recommended.json'
 import Post from "../../../models/Post";
 
 @Component({
@@ -23,6 +24,7 @@ export class LoginComponent implements OnInit {
   loginHistory: any[] = [];
   uploadedSolutionFiles: Post[] = [];
   uploadedProblemFiles: Post[] = [];
+  recommendedPosts: Post[] = [];
 
   constructor(private httpClient: HttpClient) {
   }
@@ -38,6 +40,11 @@ export class LoginComponent implements OnInit {
   setLocalStorageItems() {
     this.uploadedSolutionFiles = uploadedSolutionFiles
     this.uploadedProblemFiles = uploadedProblemFiles
+    this.recommendedPosts = recommendedPosts
+    localStorage.setItem("loggedInUser", JSON.stringify(this.loginHistory));
+    localStorage.setItem('uploadedSolutionFiles', JSON.stringify(this.uploadedSolutionFiles));
+    localStorage.setItem('uploadedProblemFiles', JSON.stringify(this.uploadedProblemFiles));
+    localStorage.setItem('recommendedPosts', JSON.stringify(this.uploadedProblemFiles));
   }
 
   checkLogin() {
@@ -48,11 +55,8 @@ export class LoginComponent implements OnInit {
           userId: user.userId,
           loginTime: new Date()
         });
-        this.setLocalStorageItems()
         JSON.stringify(this.loginHistory);
-        localStorage.setItem("loggedInUser", JSON.stringify(this.loginHistory));
-        localStorage.setItem('uploadedSolutionFiles', JSON.stringify(this.uploadedSolutionFiles));
-        localStorage.setItem('uploadedProblemFiles', JSON.stringify(this.uploadedProblemFiles));
+        this.setLocalStorageItems()
       }
     });
   }

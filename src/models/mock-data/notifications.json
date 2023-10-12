@@ -1,4 +1,14 @@
-[{"notificationId":1,"title":"ridiculus mus vivamus vestibulum sagittis sapien cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus","description":"consequat lectus in est risus auctor sed tristique in tempus sit amet","date":"20.05.2023"},
-{"notificationId":2,"title":"tempus sit amet sem fusce consequat nulla nisl nunc nisl duis bibendum felis sed interdum venenatis turpis enim","description":"ut blandit non interdum in ante vestibulum ante ipsum primis in","date":"19.04.2023"},
-{"notificationId":3,"title":"eros elementum pellentesque quisque porta volutpat erat quisque erat eros viverra eget congue eget semper rutrum nulla nunc","description":"ut mauris eget massa tempor convallis nulla neque libero convallis eget eleifend luctus ultricies eu","date":"23.01.2023"},
-{"notificationId":4,"title":"ut dolor morbi vel lectus in quam fringilla rhoncus mauris enim","description":"fermentum justo nec condimentum neque sapien placerat ante nulla justo aliquam quis turpis eget elit sodales scelerisque","date":"09.09.2023"}]
+[
+  {
+    "notificationId": 1,
+    "title": "ridiculus mus vivamus vestibulum sagittis sapien cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus",
+    "description": "consequat lectus in est risus auctor sed tristique in tempus sit amet",
+    "date": "20.05.2023"
+  },
+  {
+    "notificationId": 2,
+    "title": "tempus sit amet sem fusce consequat nulla nisl nunc nisl duis bibendum felis sed interdum venenatis turpis enim",
+    "description": "ut blandit non interdum in ante vestibulum ante ipsum primis in",
+    "date": "19.04.2023"
+  }
+]

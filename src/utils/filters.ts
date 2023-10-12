@@ -62,6 +62,7 @@ export const genericFilter = (searchDataArray: string[], searchString: string, o
 export const filterDocuments = (document: FileDocument, searchString: string) => {
   const documentKeys = [
     document?.title,
+    document?.author
   ]
     .filter(f => f); // strip null/undefined values
   return genericFilter(documentKeys, searchString);

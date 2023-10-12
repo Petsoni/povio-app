@@ -1,7 +1,27 @@
+mat-drawer-container {
+  min-height: 100dvh;
+}
 .notification-drawer {
 
+  h2 {
+    margin: 1rem 0.5rem;
+    position: relative;
+    font-family: Mulish, sans-serif;
+    font-weight: 700;
+
+    &:after {
+      content: "";
+      width: 10%;
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      height: 2px;
+      background: #9a7bef;
+    }
+  }
+
   .generic-notification {
-    width: 30rem;
+    width: 20rem;
     padding: 1.25rem;
     margin: 0.5rem 0.5rem;
     background: #f3f3f3;
@@ -12,8 +32,9 @@
 
 
     .generic-notification-title {
-      font-weight: 600;
+      font-weight: 700;
       color: #222;
+      font-size: 1rem;
       margin: 0;
     }
 
@@ -130,6 +151,14 @@
         gap: 1rem;
         justify-content: center;
         align-items: center;
+
+        .date-sort {
+          cursor: pointer;
+          display: flex;
+          flex-direction: revert;
+          align-items: center;
+          justify-content: center;
+        }
       }
 
       button {
@@ -140,10 +169,6 @@
       .search-field {
         width: 25rem;
         flex: 10;
-
-        input {
-          border-radius: 25px !important;
-        }
       }
     }
 

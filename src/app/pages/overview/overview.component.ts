@@ -8,7 +8,7 @@ import Post from "../../../models/Post";
 import {debounceTime, Subject} from "rxjs";
 import {filterDocuments} from "../../../utils/filters";
 import User from "../../../models/User";
-import {getColorByTag} from "../../../utils/global-services";
+import {getColorByTag, getProblemPosts, getRecommendedPosts, getSolutionPosts} from "../../../utils/global-services";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {UserRole} from "../../../models/UserRole";
 import userRoles from '../../../models/mock-data/roles.json';
@@ -26,6 +26,7 @@ export class OverviewComponent implements OnInit {
   protected readonly getColorByTag = getColorByTag;
   uploadedSolutionFiles: Post[] = [];
   uploadedProblemFiles: Post[] = [];
+  recommendedPosts: Post[] = [];
   selectedTag: any
   typingSubject = new Subject<any>();
   documentSearchValue: string = '';
@@ -42,10 +43,11 @@ export class OverviewComponent implements OnInit {
     title: new FormControl(null, Validators.required),
     description: new FormControl(null, Validators.required),
     tag: new FormControl(null, Validators.required),
-    lastModifiedBy: new FormControl(null, Validators.required),
+    lastModifiedBy: new FormControl(null),
     lastModified: new FormControl(new Date()),
     typeOfPost: new FormControl(null, Validators.required),
   });
+  sortOrder: string = 'Newest';
 
   constructor(private dialog: MatDialog) {
     this.typingSubject.pipe(
@@ -63,8 +65,9 @@ export class OverviewComponent implements OnInit {
   }
 
   getUploadedFiles() {
-    this.uploadedSolutionFiles = JSON.parse(localStorage.getItem('uploadedSolutionFiles'));
-    this.uploadedProblemFiles = JSON.parse(localStorage.getItem('uploadedProblemFiles'));
+    this.uploadedSolutionFiles = getSolutionPosts()
+    this.uploadedProblemFiles = getProblemPosts()
+    this.recommendedPosts = getRecommendedPosts()
   }
 
   getAllUsers() {
@@ -174,6 +177,32 @@ export class OverviewComponent implements OnInit {
 
   showExpansion() {
     this.showExpansionPanel = true;
+  }
+
+  setSortOrder() {
+    this.sortOrder = this.sortOrder === 'Oldest' ? 'Newest' : 'Oldest';
+  }
+
+  checkTime(date: string) {
+    return date != null ? new Date(date).getTime() : null;
+  }
+
+  sortDocumentsByDate() {
+    if (this.sortOrder === 'Newest') {
+      this.uploadedSolutionFiles.sort((a, b) => {
+        return new Date(this.checkTime(a.lastModified)).getTime() - new Date(this.checkTime(b.lastModified)).getTime();
+      });
+      this.uploadedProblemFiles.sort((a, b) => {
+        return new Date(a.lastModified).getTime() - new Date(b.lastModified).getTime();
+      });
+    } else {
+      this.uploadedSolutionFiles.sort((a, b) => {
+        return new Date(b.lastModified).getTime() - new Date(a.lastModified).getTime();
+      });
+      this.uploadedProblemFiles.sort((a, b) => {
+        return new Date(b.lastModified).getTime() - new Date(a.lastModified).getTime();
+      });
+    }
   }
 
 }

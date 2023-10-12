@@ -52,7 +52,7 @@ export class AddDocumentComponent implements OnInit {
     });
     if (foundFile) {
       this.isLiked = !this.isLiked;
-      this.passedDocument.numberOfUpVotes++;
+      this.isLiked ? this.passedDocument.numberOfUpVotes++ : this.passedDocument.numberOfUpVotes--;
       updatePost(this.passedDocument);
     }
   }

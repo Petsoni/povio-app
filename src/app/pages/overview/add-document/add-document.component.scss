@@ -101,11 +101,21 @@
     .header-wrapper {
       width: 100%;
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       justify-content: flex-start;
-      align-items: center;
+      align-items: flex-start;
       gap: 0.75rem;
-      margin: 0 0 1rem 0;
+      padding: 0 0 0.5rem 0;
+      border-bottom: 1px solid #909090;
+
+      .header-chips {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 0.5rem;
+      }
 
       p {
         display: flex;
@@ -129,6 +139,10 @@
           color: #ccc;
         }
       }
+
+    }
+    .document-description {
+      margin-top: 0.5rem;
     }
 
     mat-form-field {

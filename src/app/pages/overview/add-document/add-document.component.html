@@ -3,11 +3,13 @@
     <div class="document-content">
       <div class="document-title">
         <div class="header-wrapper">
+          <div class="header-chips">
+            <mat-chip [ngStyle]="{'background': getColorByTag(passedDocument.category)}">
+              <b>{{passedDocument.category}}</b></mat-chip>
+            <mat-chip [ngStyle]="{'background': getColorByTag(passedDocument.category)}">
+              <b>{{passedDocument.subCategory}}</b></mat-chip>
+          </div>
           <h2 *ngIf="passedDocument">{{passedDocument.title}}</h2>
-          <mat-chip [ngStyle]="{'background': getColorByTag(passedDocument.category)}">
-            <b>{{passedDocument.category}}</b></mat-chip>
-          <mat-chip [ngStyle]="{'background': getColorByTag(passedDocument.category)}">
-            <b>{{passedDocument.subCategory}}</b></mat-chip>
         </div>
         <div class="document-description">
           <p>{{passedDocument.description}}</p>

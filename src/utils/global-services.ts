@@ -34,6 +34,10 @@ export function saveSolutionPost(post: any) {
   localStorage.setItem('uploadedSolutionFiles', JSON.stringify(uploadedSolutionFiles));
 }
 
+export function getRecommendedPosts() {
+  return JSON.parse(localStorage.getItem('recommendedPosts'));
+}
+
 export function saveProblemPost(post: any) {
   let uploadedProblemFiles = JSON.parse(localStorage.getItem('uploadedProblemFiles'));
   if (!uploadedProblemFiles) {
@@ -64,7 +68,6 @@ export function updatePost(post: any) {
     }
     return file;
   });
-  console.log(uploadedSolutionFiles);
   localStorage.setItem('uploadedProblemFiles', JSON.stringify(uploadedProblemFiles));
   localStorage.setItem('uploadedSolutionFiles', JSON.stringify(uploadedSolutionFiles));
 }

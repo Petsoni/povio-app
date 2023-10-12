@@ -1,0 +1,67 @@
+[
+  {
+    "postId": 6,
+    "title": "String Manipulation",
+    "description": "Design a smart home system that automates lighting and temperature control",
+    "author": "dparadis5",
+    "lastModifiedBy": "dlilliman5",
+    "lastModified": "05.05.2022",
+    "createdDate": "19.03.2022",
+    "category": "Design",
+    "subCategory": "Graphic Design",
+    "numberOfComments": 16,
+    "numberOfUpVotes": 55
+  },
+  {
+    "postId": 7,
+    "title": "String Manipulation",
+    "description": "Implement a machine learning algorithm to detect spam emails",
+    "author": "lgirardet6",
+    "lastModifiedBy": "obaudet6",
+    "lastModified": "19.05.2023",
+    "createdDate": "11.05.2023",
+    "category": "Frontend",
+    "subCategory": "ReactJS",
+    "numberOfComments": 25,
+    "numberOfUpVotes": 121
+  },
+  {
+    "postId": 8,
+    "title": "Sorting Algorithms",
+    "description": "Design a smart home system that automates lighting and temperature control",
+    "author": "vmarcu7",
+    "lastModifiedBy": "bgreve7",
+    "lastModified": "11.07.2022",
+    "createdDate": "13.04.2022",
+    "category": "Frontend",
+    "subCategory": "Angular",
+    "numberOfComments": 22,
+    "numberOfUpVotes": 70
+  },
+  {
+    "postId": 9,
+    "title": "String Manipulation",
+    "description": "Develop a software solution for inventory management in retail stores",
+    "author": "wbartel8",
+    "lastModifiedBy": "kcrosskill8",
+    "lastModified": "25.05.2023",
+    "createdDate": "31.12.2022",
+    "category": "Support",
+    "subCategory": "Technical Support",
+    "numberOfComments": 22,
+    "numberOfUpVotes": 70
+  },
+  {
+    "postId": 10,
+    "title": "The Fibonacci Sequence",
+    "description": "Build a chatbot for customer support that uses natural language processing",
+    "author": "mfroome9",
+    "lastModifiedBy": "fflag9",
+    "lastModified": "24.08.2022",
+    "createdDate": "21.09.2023",
+    "category": "Finance",
+    "subCategory": "Tax",
+    "numberOfComments": 22,
+    "numberOfUpVotes": 70
+  }
+]
