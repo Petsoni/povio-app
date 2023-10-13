@@ -3,7 +3,7 @@
     <h2>Notification center</h2>
     <div *ngFor="let notification of notificationList" class="generic-notification">
       <p class="generic-notification-title">{{notification?.title}}</p>
-      <p class="generic-notification-text">{{notification?.description}}</p>
+      <p class="generic-notification-text">{{notification?.content}}</p>
       <div class="generic-notification-actions">
         <p class="generic-notification-date">{{notification?.date}}</p>
       </div>
@@ -18,7 +18,7 @@
     </div>
     <div class="main-post-wrapper">
       <div class="logo-wrapper">
-        <img src="assets/povio-logo.png" class="povio-logo" alt="logo">
+        <img src="assets/logos/Logo.svg" class="povio-logo" alt="logo">
       </div>
 
       <!---------------------------------- FILTERING/ACTIONS -------------------------------->
@@ -36,9 +36,10 @@
         <div class="filter-actions">
           <mat-form-field>
             <mat-select [(value)]="selectedTag" (selectionChange)="filterDocumentsByTag()" placeholder="User role">
-              <mat-option [value]="'ALL'"><b><i>Clear</i></b></mat-option>
+              <mat-option [value]="null"><b><i>Clear</i></b></mat-option>
               <mat-optgroup *ngFor="let role of userRoles" [label]="role.displayValue">
                 <mat-option *ngFor="let subCategory of role.subCategory" [value]="subCategory.value">
+<!--                  <img class="sub-cat-icon" src="{{subCategory.icon}}" alt="">-->
                   {{subCategory.displayValue}}
                 </mat-option>
               </mat-optgroup>
@@ -50,45 +51,6 @@
           </div>
         </div>
       </div>
-
-      <!---------------------------------- RECOMMENDED -------------------------------->
-<!--      <div class="recommended-posts">-->
-<!--        <div class="posts-wrapper">-->
-<!--          <div class="file-card" *ngFor="let recommendedPost of recommendedPosts"-->
-<!--               (click)="openDocumentDialog(recommendedPost)">-->
-<!--            <div class="file-header">-->
-<!--              <div class="main-header">-->
-<!--                <div class="file-title">-->
-<!--                  <h2>{{recommendedPost.title}}</h2>-->
-<!--                  <mat-chip [ngStyle]="{'background': getColorByTag(recommendedPost.category)}">-->
-<!--                    <b>{{recommendedPost.category}}</b>-->
-<!--                  </mat-chip>-->
-<!--                  <mat-chip [ngStyle]="{'background': getColorByTag(recommendedPost.category)}">-->
-<!--                    <b>{{recommendedPost.subCategory}}</b>-->
-<!--                  </mat-chip>-->
-<!--                </div>-->
-<!--                <div class="file-actions">-->
-<!--                  <p>-->
-<!--                    <mat-icon>maps_ugc</mat-icon>-->
-<!--                    {{recommendedPost.numberOfComments}}-->
-<!--                  </p>-->
-<!--                  <p>-->
-<!--                    <mat-icon>thumb_up</mat-icon>-->
-<!--                    {{recommendedPost.numberOfUpVotes}}-->
-<!--                  </p>-->
-<!--                </div>-->
-<!--              </div>-->
-<!--              <div class="user-info">-->
-<!--                <p><b>{{recommendedPost.author}}</b></p>-->
-<!--                <p>Last modified on: {{recommendedPost.lastModified}}</p>-->
-<!--              </div>-->
-<!--            </div>-->
-<!--            <div class="file-description-short">-->
-<!--              <p>{{recommendedPost.description}}</p>-->
-<!--            </div>-->
-<!--          </div>-->
-<!--        </div>-->
-<!--      </div>-->
 
       <!---------------------------------- TABS -------------------------------->
       <div class="feed-wrapper">
@@ -127,7 +89,7 @@
                   </div>
                 </div>
                 <div class="file-description-short">
-                  <p>{{file.description}}</p>
+                  <p [innerHTML]="file.description"></p>
                 </div>
               </div>
             </mat-tab>
@@ -190,7 +152,8 @@
                 </div>
                 <div class="user-role">
                   <mat-form-field>
-                    <mat-select formControlName="tag" placeholder="User role">
+                    <mat-label>Category</mat-label>
+                    <mat-select formControlName="tag">
                       <mat-option [value]="'ALL'"><b><i>Clear</i></b></mat-option>
                       <mat-optgroup *ngFor="let role of userRoles" [label]="role.displayValue">
                         <mat-option *ngFor="let subCategory of role.subCategory" [value]="subCategory.value">

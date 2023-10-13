@@ -6,8 +6,10 @@ import mockUsers from '../../../models/mock-data/users.json';
 import uploadedSolutionFiles from '../../../models/mock-data/files-solutions.json'
 import uploadedProblemFiles from '../../../models/mock-data/files-problems.json'
 import recommendedPosts from '../../../models/mock-data/files-recommended.json'
+import notifications from '../../../models/mock-data/notifications.json'
 import Post from "../../../models/Post";
 import {setUsersToLocalStorage} from "../../../utils/global-services";
+import Notification from "../../../models/Notification";
 
 @Component({
   selector: 'app-login',
@@ -26,6 +28,7 @@ export class LoginComponent implements OnInit {
   uploadedSolutionFiles: Post[] = [];
   uploadedProblemFiles: Post[] = [];
   recommendedPosts: Post[] = [];
+  notifications: Notification[] = [];
 
   constructor(private httpClient: HttpClient) {
   }
@@ -43,7 +46,8 @@ export class LoginComponent implements OnInit {
     this.uploadedSolutionFiles = uploadedSolutionFiles
     this.uploadedProblemFiles = uploadedProblemFiles
     this.recommendedPosts = recommendedPosts
-    // localStorage.setItem("users", JSON.stringify(this.users));
+    this.notifications = notifications
+    localStorage.setItem("notifications", JSON.stringify(this.notifications));
     localStorage.setItem("loggedInUser", JSON.stringify(this.loginHistory));
     localStorage.setItem('uploadedSolutionFiles', JSON.stringify(this.uploadedSolutionFiles));
     localStorage.setItem('uploadedProblemFiles', JSON.stringify(this.uploadedProblemFiles));

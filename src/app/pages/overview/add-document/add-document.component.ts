@@ -5,10 +5,13 @@ import {
   getColorByTag,
   getLoggedInUser,
   getProblemPosts,
-  getSolutionPosts, getUserById,
+  getSolutionPosts, getUserById, saveCommentToPost,
   updatePost
 } from "../../../../utils/global-services";
 import User from "../../../../models/User";
+import {MatSnackBar} from "@angular/material/snack-bar";
+import {showSuccessSnackbar} from "../../../../utils/snackbar-service";
+import {FormControl, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-add-document',
@@ -29,10 +32,14 @@ export class AddDocumentComponent implements OnInit {
   isLiked: boolean = false;
   isEditable: boolean = false;
 
+  commentForm = new FormGroup({
+    commentText: new FormControl(null, Validators.required)
+  })
+
   constructor(public dialogRef: MatDialogRef<AddDocumentComponent>,
+              public snackBar: MatSnackBar,
               @Inject(MAT_DIALOG_DATA) documentData: any) {
     if (documentData) {
-      console.log(documentData)
       this.passedDocument = documentData;
       this.filePresent = true;
     }
@@ -67,18 +74,40 @@ export class AddDocumentComponent implements OnInit {
   }
 
   postComment() {
-
+    this.passedDocument.comments.push({
+      commentId: this.passedDocument.comments.length + 1,
+      text: this.commentForm.value.commentText,
+      author: getLoggedInUser()[0].username,
+      createdDate: new Date().toLocaleDateString(),
+      likes: 0,
+      dislikes: 0,
+    });
+    this.commentForm.reset();
+    saveCommentToPost(this.passedDocument)
+    showSuccessSnackbar('Comment posted successfully', this.snackBar)
   }
 
-  setContentEditable() {
+  updateEditedPost() {
     this.isEditable = !this.isEditable;
     if (!this.isEditable) {
-      this.passedDocument.description = document.getElementsByClassName('post-description')[0].innerHTML;
-      // this.passedDocument.lastModified = new Date().toLocaleDateString();
-      let lastModifiedBy = getLoggedInUser();
-      let modifyUser = getUserById(lastModifiedBy.userId) as User;
-      this.passedDocument.lastModifiedBy = modifyUser.username;
-      updatePost(this.passedDocument);
+      let oldDescription = this.passedDocument.description;
+      let newDescription = document.getElementsByClassName('post-description')[0].innerHTML;
+      if (newDescription === '') {
+        document.getElementsByClassName('post-description')[0].innerHTML = oldDescription;
+        showSuccessSnackbar('Paragraph cannot be empty', this.snackBar)
+      } else {
+        this.passedDocument.description = newDescription
+        this.passedDocument.lastModified = new Date().toLocaleDateString();
+        let lastModifiedBy = getLoggedInUser();
+        let modifyUser = {} as User;
+        getUserById(lastModifiedBy[0].userId).then(data => {
+          modifyUser = data;
+          this.passedDocument.lastModifiedBy = modifyUser.username;
+        }).finally(() => {
+          this.snackBar.open('Post updated successfully', 'Close')
+          updatePost(this.passedDocument);
+        });
+      }
     }
   }
 }

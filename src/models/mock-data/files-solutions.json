@@ -61,14 +61,14 @@
   },
   {
     "postId": 2,
-    "title": "Graph Traversals",
-    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Gravida quis blandit turpis cursus in hac. Pellentesque elit eget gravida cum sociis natoque. Odio morbi quis commodo odio aenean sed adipiscing. In hac habitasse platea dictumst vestibulum rhoncus. Eget dolor morbi non arcu risus quis varius quam quisque. Leo vel fringilla est ullamcorper. Morbi tristique senectus et netus et. Volutpat sed cras ornare arcu dui vivamus arcu felis. Morbi tincidunt augue interdum velit euismod. Turpis tincidunt id aliquet risus. Egestas dui id ornare arcu odio ut sem nulla pharetra. Vulputate eu scelerisque felis imperdiet proin fermentum. Nec dui nunc mattis enim ut tellus elementum sagittis vitae. Massa eget egestas purus viverra. Pretium aenean pharetra magna ac placerat. Nisi quis eleifend quam adipiscing vitae proin. Morbi quis commodo odio aenean sed adipiscing.\n\nScelerisque purus semper eget duis at tellus at urna condimentum. Cras semper auctor neque vitae tempus quam pellentesque. Velit sed ullamcorper morbi tincidunt ornare massa eget egestas. Suspendisse faucibus interdum posuere lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet consectetur adipiscing. Morbi tempus iaculis urna id volutpat lacus. Mauris augue neque gravida in fermentum et sollicitudin ac. Elementum integer enim neque volutpat ac tincidunt. Cursus euismod quis viverra nibh. Porta non pulvinar neque laoreet suspendisse. Nam aliquam sem et tortor. Ornare massa eget egestas purus viverra. Viverra orci sagittis eu volutpat odio facilisis mauris sit. Convallis convallis tellus id interdum velit laoreet. Senectus et netus et malesuada fames. Dui vivamus arcu felis bibendum ut. Curabitur vitae nunc sed velit dignissim sodales ut. Nibh praesent tristique magna sit. Ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at augue. Nunc aliquet bibendum enim facilisis gravida neque.\n\nLaoreet non curabitur gravida arcu. Vulputate mi sit amet mauris commodo quis. Nunc sed augue lacus viverra vitae congue. Duis convallis convallis tellus id interdum velit laoreet id donec. Magna etiam tempor orci eu lobortis. Egestas maecenas pharetra convallis posuere morbi leo urna molestie. Ipsum suspendisse ultrices gravida dictum fusce. Aliquam purus sit amet luctus. Tellus in hac habitasse platea dictumst vestibulum rhoncus. Lectus quam id leo in vitae turpis massa sed. Urna et pharetra pharetra massa. Non blandit massa enim nec dui nunc. Ut placerat orci nulla pellentesque dignissim enim sit amet. Tempor orci dapibus ultrices in iaculis nunc sed augue lacus. Auctor eu augue ut lectus arcu bibendum at. Lorem ipsum dolor sit amet consectetur adipiscing elit pellentesque habitant. Sed odio morbi quis commodo. Condimentum mattis pellentesque id nibh tortor id aliquet lectus proin. Vel orci porta non pulvinar neque laoreet suspendisse interdum consectetur. Velit sed ullamcorper morbi tincidunt ornare massa eget.\n\nDiam phasellus vestibulum lorem sed risus ultricies. Viverra orci sagittis eu volutpat odio facilisis mauris sit. Ac felis donec et odio. Fermentum posuere urna nec tincidunt praesent semper feugiat nibh. Habitant morbi tristique senectus et netus. Egestas tellus rutrum tellus pellentesque eu. Erat velit scelerisque in dictum non consectetur a erat nam. Gravida dictum fusce ut placerat orci nulla pellentesque dignissim enim. Posuere sollicitudin aliquam ultrices sagittis orci. Sagittis eu volutpat odio facilisis mauris. Auctor eu augue ut lectus arcu bibendum at varius. Dolor sed viverra ipsum nunc aliquet bibendum enim. Elementum facilisis leo vel fringilla est ullamcorper eget nulla. Elit at imperdiet dui accumsan sit amet nulla facilisi. Nullam ac tortor vitae purus faucibus ornare suspendisse sed. Tristique et egestas quis ipsum suspendisse. Gravida quis blandit turpis cursus. Tristique sollicitudin nibh sit amet. Risus viverra adipiscing at in tellus integer feugiat scelerisque varius. Elit pellentesque habitant morbi tristique.",
+    "title": "Mastering Sales: Successful Closing Techniques and Negotiation Tips",
+    "description": "In the fast-paced world of sales, closing deals and successful negotiation are critical skills. To excel in these areas, sales professionals must employ a combination of proven techniques and strategies. Here, we explore some key tactics that can elevate your sales game.\n\n*1. Build Rapport:* Establishing a strong rapport with your prospect is the foundation of any successful sale. Take the time to understand their needs, interests, and pain points. Building a genuine connection can make the negotiation process smoother.\n\n*2. Active Listening:* When in a negotiation, listen more than you speak. Pay attention to the prospect's concerns and objections. By actively listening, you can tailor your pitch to address their specific needs and demonstrate empathy.\n\n*3. Ask Open-Ended Questions:* Encourage dialogue by asking open-ended questions that prompt your prospect to elaborate on their requirements. This helps you gather valuable information and ensures that your solutions align with their needs.\n\n*4. Present Value:* Showcase the value of your product or service. Clearly articulate how it can solve the prospect's problems, save them time or money, or improve their life in some way. Quantify the benefits wherever possible.\n\n*5. Handle Objections Gracefully:* Objections are a natural part of the sales process. Instead of avoiding them, address objections with confidence. Show that you've thought about potential concerns and have answers ready.\n\n*6. Negotiate Win-Win Solutions:* The goal of negotiation should be a win-win outcome. Be flexible and willing to compromise while ensuring that the deal remains favorable to both parties. Finding common ground builds trust.\n\n*7. Create a Sense of Urgency:* Encourage action by creating a sense of urgency. This can be achieved by offering limited-time promotions or explaining the consequences of delaying the decision.\n",
     "author": "lpryke1",
     "lastModifiedBy": "ttailby1",
     "lastModified": "04.07.2022.",
     "createdDate": "11.02.2023.",
-    "category": "Backend",
-    "subCategory": "Spring Boot",
+    "category": "Finance",
+    "subCategory": "Sales",
     "numberOfComments": 3,
     "numberOfUpVotes": 55,
     "comments": [
@@ -154,7 +154,8 @@
     "category": "Frontend",
     "subCategory": "Vue",
     "numberOfComments": 0,
-    "numberOfUpVotes": 241
+    "numberOfUpVotes": 241,
+    "comments": []
   },
   {
     "postId": 5,
@@ -167,7 +168,8 @@
     "category": "Design",
     "subCategory": "Adobe Photoshop",
     "numberOfComments": 0,
-    "numberOfUpVotes": 250
+    "numberOfUpVotes": 250,
+    "comments": []
   },
   {
     "postId": 6,
@@ -180,7 +182,8 @@
     "category": "Design",
     "subCategory": "Graphic Design",
     "numberOfComments": 16,
-    "numberOfUpVotes": 55
+    "numberOfUpVotes": 55,
+    "comments": []
   },
   {
     "postId": 7,
@@ -193,7 +196,8 @@
     "category": "Frontend",
     "subCategory": "ReactJS",
     "numberOfComments": 25,
-    "numberOfUpVotes": 121
+    "numberOfUpVotes": 121,
+    "comments": []
   },
   {
     "postId": 8,
@@ -206,7 +210,8 @@
     "category": "Frontend",
     "subCategory": "Angular",
     "numberOfComments": 22,
-    "numberOfUpVotes": 70
+    "numberOfUpVotes": 70,
+    "comments": []
   },
   {
     "postId": 9,
@@ -219,7 +224,8 @@
     "category": "Support",
     "subCategory": "Technical Support",
     "numberOfComments": 22,
-    "numberOfUpVotes": 70
+    "numberOfUpVotes": 70,
+    "comments": []
   },
   {
     "postId": 10,
@@ -232,6 +238,21 @@
     "category": "Finance",
     "subCategory": "Tax",
     "numberOfComments": 22,
-    "numberOfUpVotes": 70
+    "numberOfUpVotes": 70,
+    "comments": []
+  },
+  {
+    "postId": 10,
+    "title": "Mastery of Sales: Effective Closure Methods and Negotiation Pointers",
+    "description": "In the dynamic world of sales, the ability to seal deals and engage in successful negotiations holds paramount importance. To excel in these domains, sales professionals need to utilize a blend of time-tested techniques and strategies. Here, we delve into some pivotal methods that can enhance your prowess in sales.\n\nEstablish a Strong Connection: The foundation of any successful sale lies in building a robust rapport with your potential customer. Take the time to comprehend their needs, interests, and pain points. Establishing a genuine connection can streamline the negotiation process.\n\nActively Listen: During negotiations, it's crucial to listen more than you speak. Pay close attention to the prospect's concerns and objections. Active listening allows you to tailor your pitch to address their specific requirements and exhibit empathy.\n\nPose Open-Ended Questions: Foster a dialogue by posing open-ended questions that encourage your prospect to elaborate on their demands. This aids in gathering valuable information and ensuring that your solutions align with their needs.",
+    "author": "lpryke1",
+    "lastModifiedBy": "ttailby1",
+    "lastModified": "04.07.2022.",
+    "createdDate": "11.02.2023.",
+    "category": "Finance",
+    "subCategory": "Sales",
+    "numberOfComments": 0,
+    "numberOfUpVotes": 55,
+    "comments": []
   }
 ]

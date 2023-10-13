@@ -54,6 +54,10 @@ h1, h2, h3, h4, h5, p {
   width: 20%;
 }
 
+.success-snackbar {
+  color: #24dd8c;
+}
+
 button {
   display: flex;
   flex-direction: row;
@@ -74,12 +78,8 @@ button {
   width: 0.5rem;
 }
 
-::-webkit-scrollbar-track {
-  background: $secondary-color;
-}
-
 ::-webkit-scrollbar-thumb {
-  background: $primary-color;
+  background: #513f96;
 }
 
 

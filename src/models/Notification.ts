@@ -1,7 +1,8 @@
 export interface UserNotification {
-  id: number,
+  notificationId: number,
   title: string,
-  content: string
+  content: string,
+  date: string,
 }
 
 export default UserNotification;

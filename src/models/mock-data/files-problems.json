@@ -154,7 +154,8 @@
     "category": "Frontend",
     "subCategory": "Vue",
     "numberOfComments": 0,
-    "numberOfUpVotes": 241
+    "numberOfUpVotes": 241,
+    "comments": []
   },
   {
     "postId": 15,
@@ -167,7 +168,8 @@
     "category": "Design",
     "subCategory": "Adobe Photoshop",
     "numberOfComments": 0,
-    "numberOfUpVotes": 250
+    "numberOfUpVotes": 250,
+    "comments": []
   },
   {
     "postId": 16,
@@ -180,6 +182,7 @@
     "category": "Design",
     "subCategory": "Adobe Photoshop",
     "numberOfComments": 16,
-    "numberOfUpVotes": 55
+    "numberOfUpVotes": 55,
+    "comments": []
   }
 ]

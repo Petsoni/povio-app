@@ -7,7 +7,8 @@
       {
         "subCategoryId": 1,
         "displayValue": "Spring Boot",
-        "value": "Spring Boot"
+        "value": "Spring Boot",
+        "icon": "assets/logos/spring-boot-logo.png"
       },
       {
         "subCategoryId": 2,
@@ -24,12 +25,19 @@
       {
         "subCategoryId": 3,
         "displayValue": "Angular",
-        "value": "Angular"
+        "value": "Angular",
+        "icon": "assets/logos/Angular_full_color.png"
       },
       {
         "subCategoryId": 4,
         "displayValue": "ReactJS",
-        "value": "ReactJS"
+        "value": "ReactJS",
+        "icon": "assets/logos/React-icon.png"
+      },
+      {
+        "subCategoryId": 13,
+        "displayValue": "iOS Development",
+        "value": "iOS Development"
       }
     ]
   },
@@ -47,6 +55,11 @@
         "subCategoryId": 6,
         "displayValue": "Tax",
         "value": "Tax"
+      },
+      {
+        "subCategoryId": 7,
+        "displayValue": "Sales",
+        "value": "Sales"
       }
     ]
   },
@@ -56,12 +69,12 @@
     "value": "Support",
     "subCategory": [
       {
-        "subCategoryId": 7,
+        "subCategoryId": 8,
         "displayValue": "Customer Support",
         "value": "Customer Support"
       },
       {
-        "subCategoryId": 8,
+        "subCategoryId": 9,
         "displayValue": "Technical Support",
         "value": "Technical Support"
       }
@@ -73,17 +86,17 @@
     "value": "Design",
     "subCategory": [
       {
-        "subCategoryId": 9,
+        "subCategoryId": 10,
         "displayValue": "UI/UX",
         "value": "UI/UX"
       },
       {
-        "subCategoryId": 10,
+        "subCategoryId": 11,
         "displayValue": "Graphic Design",
         "value": "Graphic Design"
       },
       {
-        "subCategoryId": 11,
+        "subCategoryId": 12,
         "displayValue": "Adobe Photoshop",
         "value": "Adobe Photoshop"
       }

@@ -8,13 +8,21 @@ import Post from "../../../models/Post";
 import {debounceTime, Subject} from "rxjs";
 import {filterDocuments} from "../../../utils/filters";
 import User from "../../../models/User";
-import {getColorByTag, getProblemPosts, getRecommendedPosts, getSolutionPosts} from "../../../utils/global-services";
+import {
+  getAllNotifications,
+  getColorByTag,
+  getProblemPosts,
+  getRecommendedPosts,
+  getSolutionPosts, setANotificationForComment
+} from "../../../utils/global-services";
 import {FormControl, FormGroup, Validators} from "@angular/forms";
 import {UserRole} from "../../../models/UserRole";
 import userRoles from '../../../models/mock-data/roles.json';
-import notificationList from '../../../models/mock-data/notifications.json'
-import notification from "../../../models/Notification";
 import {MatExpansionPanel} from "@angular/material/expansion";
+import Notification from "../../../models/Notification";
+import {showSuccessSnackbar} from "../../../utils/snackbar-service";
+import {MatSnackBar} from "@angular/material/snack-bar";
+import {MatDrawerContainer} from "@angular/material/sidenav";
 
 @Component({
   selector: 'app-overview',
@@ -25,6 +33,7 @@ import {MatExpansionPanel} from "@angular/material/expansion";
 export class OverviewComponent implements OnInit {
 
   @ViewChild('formPanel', {static: false}) formPanel: MatExpansionPanel;
+  @ViewChild('drawer', {static: false}) drawer: MatDrawerContainer;
 
   protected readonly getColorByTag = getColorByTag;
   uploadedSolutionFiles: Post[] = [];
@@ -37,7 +46,7 @@ export class OverviewComponent implements OnInit {
   users: User[] = [];
   selectedUserRole: UserRole
   newPostCategory: UserRole;
-  notificationList: any[] = [];
+  notificationList: Notification[] = [];
 
   userRoles: UserRole[] = []
   showExpansionPanel: boolean = false;
@@ -53,7 +62,8 @@ export class OverviewComponent implements OnInit {
   sortOrder: string = 'Newest';
   loading: boolean = false;
 
-  constructor(private dialog: MatDialog) {
+  constructor(private dialog: MatDialog,
+              private snackBar: MatSnackBar) {
     this.typingSubject.pipe(
       debounceTime(100)
     ).subscribe(() => {
@@ -73,16 +83,22 @@ export class OverviewComponent implements OnInit {
     setTimeout(() => {
       getSolutionPosts().then((posts) => {
         this.uploadedSolutionFiles = posts;
+        this.uploadedSolutionFiles.sort((a, b) => {
+          return new Date(this.checkTime(b.lastModified)).getTime() - new Date(this.checkTime(a.lastModified)).getTime();
+        });
       }).finally(() => {
         this.loading = false
       })
 
       getProblemPosts().then((posts) => {
         this.uploadedProblemFiles = posts;
+        this.uploadedProblemFiles.sort((a, b) => {
+          return new Date(b.lastModified).getTime() - new Date(a.lastModified).getTime();
+        });
       }).finally(() => {
         this.loading = false
       });
-    }, 2000)
+    }, 1000)
     this.recommendedPosts = getRecommendedPosts()
   }
 
@@ -95,7 +111,7 @@ export class OverviewComponent implements OnInit {
   }
 
   getAllNotifications() {
-    this.notificationList = notificationList;
+    this.notificationList = getAllNotifications();
   }
 
   openDocumentDialog(document?: any) {
@@ -105,12 +121,12 @@ export class OverviewComponent implements OnInit {
       dialogConfig.data = document;
     }
     dialogConfig.minWidth = '75dvw';
-    dialogConfig.maxHeight = '95dvh';
+    dialogConfig.minHeight = '95%';
     this.dialog.open(AddDocumentComponent, dialogConfig);
   }
 
   filterDocumentsByTag() {
-    if (this.selectedTag === 'ALL') {
+    if (this.selectedTag === null) {
       this.getUploadedFiles();
       this.selectedUserRole = null;
     } else {
@@ -181,13 +197,40 @@ export class OverviewComponent implements OnInit {
     if (this.addDocumentForm.value.typeOfPost === 'solution') {
       this.uploadedSolutionFiles.push(newFileUpload);
       localStorage.setItem('uploadedSolutionFiles', JSON.stringify(this.uploadedSolutionFiles));
-      console.log(localStorage.getItem('uploadedSolutionFiles'))
     }
     if (this.addDocumentForm.value.typeOfPost === 'problem') {
       this.uploadedProblemFiles.push(newFileUpload);
       localStorage.setItem('uploadedProblemFiles', JSON.stringify(this.uploadedProblemFiles));
     }
     this.getUploadedFiles();
+    showSuccessSnackbar('Document added successfully', this.snackBar);
+
+    // Set new mock notification for new comment on an uploaded post
+    if(this.addDocumentForm.value.typeOfPost === 'solution'){
+      setTimeout(() => {
+        setANotificationForComment();
+        this.snackBar.open('You have a new notification', 'View', {
+          duration: 2000,
+          verticalPosition: 'top',
+        }).onAction().subscribe(() => {
+          this.drawer.open();
+        });
+        this.getUploadedFiles()
+        this.notificationList = getAllNotifications();
+      }, 3000)
+    } else {
+      setTimeout(() => {
+        setANotificationForComment();
+        this.snackBar.open('You have a new notification', 'View', {
+          duration: 2000,
+          verticalPosition: 'top',
+        }).onAction().subscribe(() => {
+          this.drawer.open();
+        });
+        this.getUploadedFiles()
+        this.notificationList = getAllNotifications();
+      }, 3000)
+    }
     this.showExpansionPanel = false;
   }
 

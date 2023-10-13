@@ -23,29 +23,30 @@
         </div>
         <div class="">
           <button mat-flat-button color="primary"
-                  (click)="setContentEditable()">{{isEditable ? 'Done' : 'Edit'}}</button>
+                  (click)="updateEditedPost()">{{isEditable ? 'Done' : 'Edit'}}</button>
         </div>
       </div>
       <div class="comments-wrapper">
         <h2>Comments</h2>
         <div class="comment">
-          <div class="comment-text">
+          <form class="comment-text" [formGroup]="commentForm">
             <mat-icon>account_circle</mat-icon>
             <mat-form-field appearance="fill" floatLabel="always">
-                  <textarea matInput type="text" #commentInput [value]="null" [autofocus]="false"
-                            [placeholder]="passedDocument.comments ? 'Provide an answer' : 'Be the first to provide an answer'">
-                  </textarea>
+              <input matInput formControlName="commentText" type="text" #commentInput [value]="commentInput.value"
+                     [autofocus]="false" class="comment-textarea"
+                     [placeholder]="passedDocument.comments ? 'Provide an answer' : 'Be the first to provide an answer'"/>
             </mat-form-field>
-          </div>
+          </form>
           <div class="comment-date">
-            <button mat-flat-button color="primary" (click)="postComment()" *ngIf="commentInput.value.length != 0">
+            <button mat-flat-button color="primary" (click)="postComment()" *ngIf="commentForm.valid">
               Comment
             </button>
           </div>
         </div>
         <div class="comment" *ngFor="let comment of passedDocument.comments">
           <div class="comment-text">
-            <img src="{{comment.userPic}}" alt="User picture" [matTooltip]="comment.author">
+            <img src="{{comment.userPic ? comment.userPic : 'assets/account-pic.png'}}" alt="User picture"
+                 [matTooltip]="comment.author">
             <p>{{comment.text}}</p>
           </div>
           <div class="comment-date">
@@ -60,12 +61,12 @@
         <div class="author-details-text">
           <h2>{{passedDocument.author}}</h2>
           <p>{{passedDocument.authorDescription}}</p>
-          <p>Senior developer</p>
+          <p [ngStyle]="{'color': getColorByTag(passedDocument.category)}"><b>Senior specialist</b></p>
           <div class="upvote-chip" (click)="upvotePost()" [ngClass]="isLiked ? 'liked' : 'can-like'">
             <p class="rating">
               Rating:
               <mat-icon>thumb_up</mat-icon>
-              {{passedDocument.numberOfUpVotes}}
+              {{passedDocument.numberOfUpVotes + 32}}
             </p>
           </div>
         </div>

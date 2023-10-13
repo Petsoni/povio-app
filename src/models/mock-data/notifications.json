@@ -2,13 +2,13 @@
   {
     "notificationId": 1,
     "title": "ridiculus mus vivamus vestibulum sagittis sapien cum sociis natoque penatibus et magnis dis parturient montes nascetur ridiculus mus",
-    "description": "consequat lectus in est risus auctor sed tristique in tempus sit amet",
+    "content": "consequat lectus in est risus auctor sed tristique in tempus sit amet",
     "date": "20.05.2023"
   },
   {
     "notificationId": 2,
     "title": "tempus sit amet sem fusce consequat nulla nisl nunc nisl duis bibendum felis sed interdum venenatis turpis enim",
-    "description": "ut blandit non interdum in ante vestibulum ante ipsum primis in",
+    "content": "ut blandit non interdum in ante vestibulum ante ipsum primis in",
     "date": "19.04.2023"
   }
 ]

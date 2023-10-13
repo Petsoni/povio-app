@@ -10,7 +10,8 @@
     "category": "Design",
     "subCategory": "Graphic Design",
     "numberOfComments": 16,
-    "numberOfUpVotes": 55
+    "numberOfUpVotes": 55,
+    "comments": []
   },
   {
     "postId": 7,
@@ -23,7 +24,8 @@
     "category": "Frontend",
     "subCategory": "ReactJS",
     "numberOfComments": 25,
-    "numberOfUpVotes": 121
+    "numberOfUpVotes": 121,
+    "comments": []
   },
   {
     "postId": 8,
@@ -36,7 +38,8 @@
     "category": "Frontend",
     "subCategory": "Angular",
     "numberOfComments": 22,
-    "numberOfUpVotes": 70
+    "numberOfUpVotes": 70,
+    "comments": []
   },
   {
     "postId": 9,
@@ -49,7 +52,8 @@
     "category": "Support",
     "subCategory": "Technical Support",
     "numberOfComments": 22,
-    "numberOfUpVotes": 70
+    "numberOfUpVotes": 70,
+    "comments": []
   },
   {
     "postId": 10,
@@ -62,6 +66,7 @@
     "category": "Finance",
     "subCategory": "Tax",
     "numberOfComments": 22,
-    "numberOfUpVotes": 70
+    "numberOfUpVotes": 70,
+    "comments": []
   }
 ]

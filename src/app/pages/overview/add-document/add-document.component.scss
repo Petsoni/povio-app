@@ -2,6 +2,10 @@
   padding: 2rem 4rem !important;
 }
 
+.mat-mdc-dialog-content {
+  max-height: 95dvh;
+}
+
 .can-like {
   cursor: pointer;
 }
@@ -12,7 +16,7 @@
 }
 
 .editing {
-  background: #d7d7d7;
+  background: #f1f1f1;
 }
 
 .not-editing {
@@ -48,7 +52,7 @@
 
     .author-details, .modify-history {
       width: 100%;
-      background: #E0E0E0;
+      background: #f1f1f1;
       padding: 0.5rem;
       border-radius: 0.5rem;
       display: flex;
@@ -123,6 +127,7 @@
       outline: none;
       text-align: justify;
       word-break: break-word;
+      white-space: break-spaces;
     }
 
     .header-wrapper {

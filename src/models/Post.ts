@@ -12,7 +12,7 @@ export type Post = {
   subCategory: string,
   numberOfComments: number,
   numberOfUpVotes: number,
-  comments?: Comment[],
+  comments: Comment[],
 }
 
 export default Post;
